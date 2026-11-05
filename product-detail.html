@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">ShopCloth</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Trang Chủ</a>
+            <a href="index.html">Sản Phẩm</a>
+            <a href="cart.html">Giỏ Hàng</a>
+            <a href="account.html">Tài Khoản</a>
+        </nav>
+    </header>
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="container detail-container">
+        <div class="product-image-large">
+            <img src="images/jacket-brown.png" alt="Chi tiết sản phẩm">
+        </div>
+        <div class="product-info-detail">
+            <h1 id="productName">Áo Thun Nam Cotton Form Rộng</h1>
+            <p class="price-large" id="productPrice">150,000 đ</p>
+            <p class="description">
+                Mô tả chi tiết: Sản phẩm chất liệu cotton 100% thoáng mát, co giãn 4 chiều, thấm hút mồ hôi tốt. Phù hợp mặc đi chơi, dạo phố hoặc tập thể thao.
+            </p>
+            
+            <div class="action-group">
+                <label for="quantity">Số lượng:</label>
+                <input type="number" id="quantity" value="1" min="1" style="width: 60px; padding: 5px;">
+                <button class="btn-primary" id="btnAddCart">Thêm vào giỏ hàng</button>
+            </div>
+            
+            <br>
+            <a href="index.html" class="back-link">&larr; Quay lại trang sản phẩm</a>
+        </div>
+    </div>
+
+</body>
+</html>

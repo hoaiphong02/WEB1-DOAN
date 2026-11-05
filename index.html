@@ -1,0 +1,129 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Quần Áo - Trang Chủ</title>
+    <!-- Thêm dòng này để hiển thị icon -->
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+</head>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Quần Áo - Trang Chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 1. Header / Navbar -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">ShopCloth</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html" class="active">Trang Chủ</a>
+            <a href="index.html">Sản Phẩm</a>
+            <a href="cart.html">Giỏ Hàng</a>
+            <a href="account.html">Tài Khoản</a>
+        </nav>
+    </header>
+
+    <!-- Nội dung chính -->
+    <div class="container">
+        <!-- Sidebar: Bộ lọc & Form tìm kiếm nâng cao -->
+        <aside class="sidebar">
+            <h3>Bộ Lọc & Tìm Kiếm</h3>
+            
+            <!-- Ô tìm kiếm nhanh -->
+            <div class="filter-group">
+                <label for="searchInput">Tìm kiếm nhanh:</label>
+                <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm...">
+            </div>
+
+            <!-- Bộ lọc danh mục -->
+            <div class="filter-group">
+                <label for="categoryFilter">Danh mục:</label>
+                <select id="categoryFilter">
+                    <option value="all">Tất cả sản phẩm</option>
+                    <option value="shirt">Áo sơ mi / Thun</option>
+                    <option value="pant">Quần Jean / Khaki</option>
+                    <option value="jacket">Áo khoác</option>
+                </select>
+            </div>
+
+            <!-- Form tìm kiếm nâng cao (theo khoảng giá) -->
+            <div class="filter-group">
+                <label>Tìm kiếm nâng cao (Giá):</label>
+                <input type="number" id="minPrice" placeholder="Giá từ (VNĐ)">
+                <input type="number" id="maxPrice" placeholder="Giá đến (VNĐ)">
+                <button id="btnAdvancedSearch" class="btn-primary">Áp dụng bộ lọc</button>
+            </div>
+        </aside>
+
+        <!-- Khu vực hiển thị Card sản phẩm -->
+        <main class="product-content">
+            <h2>Danh Sách Sản Phẩm</h2>
+            
+            <div class="product-grid" id="productGrid">
+                <!-- Card sản phẩm mẫu 1 -->
+                <div class="product-card">
+                    <img src="images/jacket-black.png" alt="Áo Khoác Nam Màu Đen">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">1,299,000 đ</p>
+                    <a href="product-detail.html?id=1" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+                
+                <!-- Card sản phẩm mẫu 2 -->
+                <div class="product-card">
+                    <img src="images/jacket-black.png" alt="Áo Khoác Nam Màu Đen">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">1,299,000 đ</p>
+                    <a href="product-detail.html?id=1" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+                
+                <!-- Card sản phẩm mẫu 3 -->
+                <div class="product-card">
+                    <img src="images/jacket-black.png" alt="Áo Khoác Nam Màu Đen">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">1,299,000 đ</p>
+                    <a href="product-detail.html?id=1" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+
+                <!-- Card sản phẩm mẫu 4 -->
+                <div class="product-card">
+                    <img src="images/jacket-brown.png" alt="Áo Khoác Nam Màu nâu">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">350,000 đ</p>
+                    <a href="product-detail.html?id=2" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+
+                <!-- Card sản phẩm mẫu 6 -->
+                <div class="product-card">
+                    <img src="images/jacket-black.png" alt="Áo Khoác Nam Màu Đen">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">1,299,000 đ</p>
+                    <a href="product-detail.html?id=1" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+
+                <!-- Card sản phẩm mẫu 5 -->
+                <div class="product-card">
+                    <img src="images/jacket-grey.png" alt="Áo Khoác Nam Màu xám">
+                    <h4>Áo Khoác Da Lộn Nam</h4>
+                    <p class="price">250,000 đ</p>
+                    <a href="product-detail.html?id=3" class="btn-detail">Xem Chi Tiết</a>
+                </div>
+            </div>
+
+            <!-- Nút phân trang -->
+            <div class="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>Trang sau &raquo;</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
