@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Quần Áo - Giỏ Hàng</title>
+    <!-- Thêm dòng này để hiển thị icon -->
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+</head>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+        <a href="logged-index.html">ShopCloth</a>
+    </div>
+    <nav class="navbar" style="display: flex; align-items: center; gap: 20px;">
+        <a href="logged-index.html">Trang Chủ</a>
+        <a href="logged-index.html">Sản Phẩm</a>
+        <a href="cart.html">Giỏ Hàng</a>
+        <a href="account.html" class="user-nav-profile" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-left: 0;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border: 1px solid #38bdf8;">N</div>
+            <span style="color: #f8fafc; font-weight: 600; font-size: 14px;">Nguyễn Văn A</span>
+        </a>
+    </nav>
+</header>
+
+
+  <div class="cart-page-wrapper">
+    <div class="cart-card-box">
+      <h2 style="font-size: 16px; font-weight: bold; margin-bottom: 12px;">Giỏ hàng của bạn (3 sản phẩm)</h2>
+      
+      <div style="overflow-x: auto;">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Giá</th>
+              <th>SL</th>
+              <th>Thành tiền</th>
+              <th>Xóa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cart-product-cell"><div class="cart-product-img"></div><span>Áo Thun Cotton</span></td>
+              <td>350.000đ</td>
+              <td><input type="text" value="2" class="cart-qty-input"></td>
+              <td><strong>700.000đ</strong></td>
+              <td><button style="background:none; border:none; color:#dc2626; cursor:pointer;">Xóa</button></td>
+            </tr>
+            <tr>
+              <td class="cart-product-cell"><div class="cart-product-img"></div><span>Quần Jean</span></td>
+              <td>550.000đ</td>
+              <td><input type="text" value="1" class="cart-qty-input"></td>
+              <td><strong>550.000đ</strong></td>
+              <td><button style="background:none; border:none; color:#dc2626; cursor:pointer;">Xóa</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top: 20px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+        <div style="font-size: 14px;">Tổng tiền hàng: <strong class="price-text" style="font-size: 16px;">1.250.000đ</strong></div>
+        <a href="checkout.html" class="btn-primary-custom" style="width: 100%; max-width: 250px;">Tiến hành đặt hàng</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

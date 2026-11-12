@@ -1,0 +1,119 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Quần Áo - Tài Khoản</title>
+    <!-- Thêm dòng này để hiển thị icon -->
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+</head><
+
+!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang tài khoản</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+        <a href="logged-index.html">ShopCloth</a>
+    </div>
+    <nav class="navbar" style="display: flex; align-items: center; gap: 20px;">
+        <a href="logged-index.html">Trang Chủ</a>
+        <a href="logged-index.html">Sản Phẩm</a>
+        <a href="cart.html">Giỏ Hàng</a>
+        <a href="account.html" class="user-nav-profile" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-left: 0;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border: 1px solid #38bdf8;">N</div>
+            <span style="color: #f8fafc; font-weight: 600; font-size: 14px;">Nguyễn Văn A</span>
+        </a>
+    </nav>
+</header>
+
+
+  <div class="account-wrapper">
+    <div class="account-top-card">
+      
+        <div class="user-profile-group">
+          <div class="avatar-circle">NV</div>
+          <div>
+            <div class="user-name">Nguyễn Văn A</div>
+            <div class="user-phone">📞 0901234567</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:20px;">
+          
+          <div>
+            <div style="font-size:50px; font-weight:bold;">5 đơn hàng</div>
+            <div style="font-size:20px; color:#64748b;">Tổng số đơn đã mua</div>
+          </div>
+
+          <div>
+            <div style="font-size:50px; font-weight:bold;" class="price-text">4.250.000đ</div>
+            <div style="font-size:20px; color:#64748b;">Tổng tiền chi tiêu</div>
+          </div>
+
+    </div>
+  </div>
+    
+
+    <div class="account-main-grid">
+      <aside class="account-sidebar-nav">
+        <a href="account.html" class="nav-item-btn active">📊 Tổng quan</a>
+        <a href="history.html" class="nav-item-btn">📦 Lịch sử mua hàng</a>
+        <a href="cart.html" class="nav-item-btn">🛒 Giỏ hàng</a>
+        <hr class="sidebar-divider">
+        <a href="index.html" class="nav-item-btn" style="color: #dc2626;">🚪 Đăng xuất</a>
+      </aside>
+
+      <main class="account-content-card">
+        <div class="sub-grid-2col">
+          <div>
+            <div class="card-heading">
+              <span>Đơn hàng gần đây</span>
+              <a href="history.html">Xem tất cả ></a>
+            </div>
+            <div class="order-box-item">
+              <div class="order-box-head">
+                <span>#DH-20261104</span>
+                <span class="badge-status status-orange">Đang xử lý</span>
+              </div>
+              <div class="order-box-body">
+                <div class="img-holder"></div>
+                <div><strong>Áo Khoác Da Lộn Nam (x2)</strong></div>
+              </div>
+              <div class="order-box-foot">Tổng: <strong class="price-text">2.598.000đ</strong></div>
+            </div>
+            
+            <div class="order-box-item">
+              <div class="order-box-head">
+                <span>#DH-20261103</span>
+                <span class="badge-status status-green">Đã giao</span>
+              </div>
+              <div class="order-box-body">
+                <div class="img-holder"></div>
+                <div><strong>Áo Khoác Da Lộn Nam (x1)</strong></div>
+              </div>
+              <div class="order-box-foot">Tổng: <strong class="price-text">1.299.000đ</strong></div>
+            </div>
+
+
+
+          </div>
+          <div>
+            <div class="card-heading"><span>Mã giảm giá</span></div>
+            <div class="coupon-item-box">
+              <strong>GIAM10%</strong>
+              <div style="color:#64748b; font-size:11px;">Giảm 10% đơn từ 500k</div>
+            </div>
+            <div class="coupon-item-box">
+              <strong>GIAM15%</strong>
+              <div style="color:#64748b; font-size:11px;">Giảm 15% đơn từ 700k</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Quần Áo - Đặt hàng</title>
+    <!-- Thêm dòng này để hiển thị icon -->
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+</head>
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đặt hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+        <a href="logged-index.html">ShopCloth</a>
+    </div>
+    <nav class="navbar" style="display: flex; align-items: center; gap: 20px;">
+        <a href="logged-index.html">Trang Chủ</a>
+        <a href="logged-index.html">Sản Phẩm</a>
+        <a href="cart.html">Giỏ Hàng</a>
+        <a href="account.html" class="user-nav-profile" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-left: 0;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border: 1px solid #38bdf8;">N</div>
+            <span style="color: #f8fafc; font-weight: 600; font-size: 14px;">Nguyễn Văn A</span>
+        </a>
+    </nav>
+</header>
+
+
+  <div class="checkout-page-wrapper">
+    <form class="checkout-grid-layout" action="success.html">
+      <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="checkout-block-box">
+          <h3 style="font-size: 14px; margin-bottom: 10px;">1. Sản phẩm</h3>
+          <table class="cart-table" style="margin-top:0;">
+            <tr>
+              <td class="cart-product-cell"><div class="cart-product-img" style="width:30px;height:30px;"></div><span>Áo Thun (x2)</span></td>
+              <td><strong>700.000đ</strong></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="checkout-block-box">
+          <h3 style="font-size: 14px; margin-bottom: 10px;">2. Địa chỉ nhận hàng</h3>
+          <div class="auth-form">
+            <div class="auth-field"><label>Họ tên</label><input type="text" value="Nguyễn Văn A"></div>
+            <div class="auth-field"><label>Số điện thoại</label><input type="text" value="0901234567"></div>
+            <div class="auth-field"><label>Địa chỉ</label><input type="text" placeholder="123 Lý Thường Kiệt, Q.10, TP.HCM"></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div class="checkout-block-box">
+          <h3 style="font-size: 14px; margin-bottom: 10px;">3. Thanh toán</h3>
+          <label class="payment-method-card">
+            <input type="radio" name="pay" checked>
+            <div><strong>Tiền mặt (COD)</strong><div style="font-size:11px; color:#64748b;">Thanh toán khi nhận hàng</div></div>
+          </label>
+          <label class="payment-method-card">
+            <input type="radio" name="pay" checked>
+            <div><strong>Chuyển khoản</strong><div style="font-size:11px; color:#64748b;">Chuyển khoản ngân hàng</div></div>
+          </label>
+        </div>
+
+        <div class="checkout-block-box" style="background:#f8fafc;">
+          <h3 style="font-size: 14px; margin-bottom: 10px;">Tóm tắt</h3>
+          <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:8px;"><span>Tạm tính:</span><span>1.250.000đ</span></div>
+          <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:8px;"><span>Phí ship:</span><span>30.000đ</span></div>
+          <hr style="border:none; border-top:1px solid #cbd5e1; margin:8px 0;">
+          <div style="display:flex; justify-content:space-between; font-size:15px; font-weight:bold; margin-bottom:15px;"><span>Tổng cộng:</span><span class="price-text">1.280.000đ</span></div>
+          <button type="submit" class="btn-primary-custom" style="background-color: #16a34a;">Đặt hàng ngay</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
