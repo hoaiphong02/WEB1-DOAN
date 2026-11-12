@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - ShopCloth</title>
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">ShopCloth</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Trang Chủ</a>
+            <a href="index.html">Sản Phẩm</a>
+            <a href="cart.html" class="active">Giỏ Hàng <span id="cartCountBadge" class="cart-badge"></span></a>
+            <a href="account.html">Tài Khoản</a>
+            <a href="admin/login.html" style="color: #38bdf8;">Quản Trị Admin</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container" style="flex-direction: column;">
+        <div id="cartContentArea">
+            <!-- Được render tự động từ js/main.js -->
+        </div>
+    </div>
+
+    <!-- Frontend JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+

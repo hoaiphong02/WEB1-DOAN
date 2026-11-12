@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Hàng & Thanh Toán - ShopCloth</title>
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">ShopCloth</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Trang Chủ</a>
+            <a href="index.html">Sản Phẩm</a>
+            <a href="cart.html">Giỏ Hàng <span id="cartCountBadge" class="cart-badge"></span></a>
+            <a href="account.html">Tài Khoản</a>
+            <a href="admin/login.html" style="color: #38bdf8;">Quản Trị Admin</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container" style="flex-direction: column;">
+        <h1 style="font-size: 24px; margin-bottom: 24px; color: #f8fafc;">Thông Tin Đặt Hàng & Thanh Toán</h1>
+
+        <form id="checkoutForm">
+            <div class="checkout-layout">
+                <!-- Cột trái: Thông tin giao hàng -->
+                <div class="cart-box">
+                    <h2>1. Địa Chỉ Nhận Hàng</h2>
+
+                    <div class="form-row-customer">
+                        <div class="form-group-customer">
+                            <label for="orderCustomerName">Họ và tên người nhận:</label>
+                            <input type="text" id="orderCustomerName" class="form-control-customer" placeholder="vd: Nguyễn Văn An" value="Nguyễn Văn An">
+                        </div>
+
+                        <div class="form-group-customer">
+                            <label for="orderCustomerPhone">Số điện thoại liên hệ:</label>
+                            <input type="text" id="orderCustomerPhone" class="form-control-customer" placeholder="vd: 0912345678" value="0912345678">
+                        </div>
+                    </div>
+
+                    <div class="form-row-customer">
+                        <div class="form-group-customer">
+                            <label for="orderCustomerCity">Tỉnh / Thành phố:</label>
+                            <input type="text" id="orderCustomerCity" class="form-control-customer" placeholder="vd: Hồ Chí Minh" value="Hồ Chí Minh">
+                        </div>
+
+                        <div class="form-group-customer">
+                            <label for="orderCustomerAddress">Địa chỉ nhà / Số đường, Phường, Quận:</label>
+                            <input type="text" id="orderCustomerAddress" class="form-control-customer" placeholder="vd: 123 Lê Lợi, Phường Bến Nghé, Quận 1" value="123 Lê Lợi, Quận 1">
+                        </div>
+                    </div>
+
+                    <div class="form-group-customer">
+                        <label for="orderCustomerNotes">Ghi chú giao hàng (Tùy chọn):</label>
+                        <textarea id="orderCustomerNotes" class="form-control-customer" rows="2" placeholder="Ghi chú về thời gian nhận hàng hoặc chỉ dẫn..."></textarea>
+                    </div>
+
+                    <h2 style="margin-top: 24px;">2. Hình Thức Thanh Toán</h2>
+                    <div class="payment-methods">
+                        <label class="payment-option active">
+                            <input type="radio" name="paymentMethod" value="COD" checked>
+                            <div>
+                                <strong style="color: #f8fafc;">Thanh toán khi nhận hàng (COD)</strong>
+                                <div style="font-size: 12.5px; color: #94a3b8;">Nhận hàng kiểm tra và thanh toán tiền mặt trực tiếp cho shipper</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="BANK">
+                            <div>
+                                <strong style="color: #f8fafc;">Chuyển khoản qua mã QR Ngân Hàng</strong>
+                                <div style="font-size: 12.5px; color: #94a3b8;">Quét mã VietQR tiện lợi, xác nhận đơn hàng tự động</div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="padding: 14px; font-size: 16px;">
+                        ✓ Xác Nhận Đặt Hàng Ngay
+                    </button>
+                </div>
+
+                <!-- Cột phải: Tóm tắt đơn hàng -->
+                <div class="cart-box" style="height: fit-content;">
+                    <h2>Đơn Hàng Của Bạn</h2>
+                    <div id="checkoutSummaryItems">
+                        <!-- Rendered by js/main.js -->
+                    </div>
+
+                    <div style="margin-top: 16px; font-size: 12.5px; color: #94a3b8; line-height: 1.6;">
+                        <p>🔒 Thông tin đơn hàng được bảo mật an toàn.</p>
+                        <p>🚚 Miễn phí giao hàng tiêu chuẩn trên toàn quốc.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Frontend JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
