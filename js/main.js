@@ -35,7 +35,7 @@ const SHOP_PRODUCTS = [
     id: 4,
     name: 'Áo Sơ Mi Oxford Dài Tay Nam',
     price: 450000,
-    image: 'images/02__2__3772339fad454be8887073f82a40f628_master.webp',
+    image: 'images/aosomi.png',
     category: 'Áo sơ mi/Thun',
     desc: 'Chất vải oxford cotton chống nhăn, thoáng mát, phong cách công sở thanh lịch.'
   },
@@ -43,7 +43,7 @@ const SHOP_PRODUCTS = [
     id: 5,
     name: 'Quần Jean Slimfit Co Giãn Nam',
     price: 520000,
-    image: 'images/OIP (2).webp',
+    image: 'images/OIP (2).png',
     category: 'Quần Jean/Khaki',
     desc: 'Chất denim dày dặn co giãn nhẹ, giữ form tôn dáng chuẩn, dễ phối đồ.'
   },
@@ -51,7 +51,7 @@ const SHOP_PRODUCTS = [
     id: 6,
     name: 'Quần Khaki Túi Hộp Streetwear',
     price: 420000,
-    image: 'images/OIP (1).webp',
+    image: 'images/OIP (1).png',
     category: 'Quần Jean/Khaki',
     desc: 'Chất liệu khaki bền bỉ phong cách streetwear thời thượng năng động.'
   },
@@ -67,7 +67,7 @@ const SHOP_PRODUCTS = [
     id: 8,
     name: 'Áo Khoác Gió Thể Thao 2 Lớp Chống Nước',
     price: 490000,
-    image: 'images/aokhoac2lop.jpg',
+    image: 'images/aokhoac2lop.png',
     category: 'Áo khoác',
     desc: 'Chất liệu trượt nước cao cấp, lót lưới thông thoáng, cản gió giữ ấm hiệu quả.'
   },
@@ -75,7 +75,7 @@ const SHOP_PRODUCTS = [
     id: 9,
     name: 'Áo Polo Nam Phối Cổ Thanh Lịch',
     price: 320000,
-    image: 'images/polo.jpg',
+    image: 'images/polo.png',
     category: 'Áo sơ mi/Thun',
     desc: 'Thiết kế cổ bẻ dệt bo sang trọng, phù hợp cả đi làm, đi chơi hay sự kiện.'
   },
@@ -83,7 +83,7 @@ const SHOP_PRODUCTS = [
     id: 10,
     name: 'Quần Tây Baggy Nam Công Sở',
     price: 480000,
-    image: 'images/quantaybaggy.webp',
+    image: 'images/quantaybaggy.png',
     category: 'Quần Jean/Khaki',
     desc: 'Form dáng baggy đứng ống tôn dáng, chất vải tuyết mưa cao cấp không bai xù.'
   }

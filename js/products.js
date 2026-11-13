@@ -38,7 +38,7 @@
       price: 450000,
       oldPrice: 550000,
       stock: 42,
-      image: '../images/02__2__3772339fad454be8887073f82a40f628_master.webp',
+      image: '../images/aosomi.png',
       description: 'Chất vải oxford cotton chống nhăn, thoáng mát, phong cách công sở thanh lịch.'
     },
     {
@@ -48,7 +48,7 @@
       price: 520000,
       oldPrice: 620000,
       stock: 30,
-      image: '../images/OIP (2).webp',
+      image: '../images/OIP (2).png',
       description: 'Chất denim dày dặn co giãn nhẹ, giữ form tôn dáng chuẩn, dễ phối đồ.'
     },
     {
@@ -58,7 +58,7 @@
       price: 420000,
       oldPrice: 490000,
       stock: 28,
-      image: '../images/OIP (1).webp',
+      image: '../images/OIP (1).png',
       description: 'Chất liệu khaki bền bỉ phong cách streetwear thời thượng năng động.'
     },
     {
@@ -78,7 +78,7 @@
       price: 490000,
       oldPrice: 590000,
       stock: 22,
-      image: '../images/aokhoac2lop.jpg',
+      image: '../images/aokhoac2lop.png',
       description: 'Chất liệu trượt nước cao cấp, lót lưới thông thoáng, cản gió giữ ấm hiệu quả.'
     },
     {
@@ -88,7 +88,7 @@
       price: 320000,
       oldPrice: 390000,
       stock: 36,
-      image: '../images/polo.jpg',
+      image: '../images/polo.png',
       description: 'Thiết kế cổ bẻ dệt bo sang trọng, phù hợp cả đi làm, đi chơi hay sự kiện.'
     },
     {
@@ -98,7 +98,7 @@
       price: 480000,
       oldPrice: 550000,
       stock: 19,
-      image: '../images/quantaybaggy.webp',
+      image: '../images/quantaybaggy.png',
       description: 'Form dáng baggy đứng ống tôn dáng, chất vải tuyết mưa cao cấp không bai xù.'
     }
   ];
