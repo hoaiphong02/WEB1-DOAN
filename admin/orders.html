@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Quản lý đơn hàng</title>
+  <link rel="icon" type="image/png" href="../images/logo-cat.png">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Sidebar Layout -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AdminStore</span>
+          <span class="brand-subtitle">Quản trị hệ thống</span>
+        </div>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Tổng quan</div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span>Quản lý User</span>
+              <span class="nav-badge">10</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <span>Quản lý Sản phẩm</span>
+            </a>
+          </li>
+          <li>
+            <a href="orders.html" class="nav-link active">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+              <span>Quản lý Đơn hàng</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Cài đặt & Tài khoản</div>
+        <ul class="nav-list">
+          <li>
+            <a href="login.html" class="nav-link" style="color: #f87171;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-quick-profile">
+          <div class="user-avatar-sm">AD</div>
+          <div class="user-quick-info">
+            <span class="user-quick-name">Nguyễn Văn Admin</span>
+            <span class="user-quick-role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="btn-mobile-sidebar" aria-label="Toggle menu">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <nav class="breadcrumb">
+            <span>Admin</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Quản lý đơn hàng</span>
+          </nav>
+        </div>
+
+        <div class="topbar-right">
+          <div class="admin" style="display:flex; align-items:center; gap:10px;">
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-container">
+        <!-- Page Heading -->
+        <div class="page-header">
+          <div class="page-title-group">
+            <h1>Quản Lý Đơn Hàng</h1>
+            <p>Theo dõi, lọc trạng thái và xử lý tất cả đơn hàng của cửa hàng.</p>
+          </div>
+          <div class="date-badge" id="currentDateBadge">Hôm nay</div>
+        </div>
+
+        <!-- 4 KPI Stat Cards -->
+        <div class="stat-grid">
+          <div class="stat-card blue">
+            <div class="stat-info">
+              <p>Tổng đơn hàng</p>
+              <div class="stat-value" id="totalOrders">0</div>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card orange">
+            <div class="stat-info">
+              <p>Chưa xác nhận</p>
+              <div class="stat-value" id="pendingOrders">0</div>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card green">
+            <div class="stat-info">
+              <p>Đã giao thành công</p>
+              <div class="stat-value" id="deliveredOrders">0</div>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="stat-card purple">
+            <div class="stat-info">
+              <p>Tổng doanh thu</p>
+              <div class="stat-value" id="revenue">0 đ</div>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bộ Lọc Đơn Hàng -->
+        <div class="card">
+          <div class="card-header" style="margin-bottom: 16px;">
+            <h2 class="card-title">Bộ lọc tìm kiếm đơn hàng</h2>
+          </div>
+          <div class="filter-bar" style="margin-bottom: 0;">
+            <div class="filter-input-wrap">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input id="search" placeholder="Mã đơn hàng, tên khách hàng...">
+            </div>
+
+            <select class="filter-select" id="statusFilter">
+              <option value="all">Tất cả trạng thái</option>
+              <option value="Chưa xác nhận">Chưa xác nhận</option>
+              <option value="Đã xác nhận">Đã xác nhận</option>
+              <option value="Đã giao">Đã giao thành công</option>
+              <option value="Hủy đơn">Hủy đơn</option>
+            </select>
+
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="font-size:12.5px; color:var(--text-muted);">Từ ngày:</span>
+              <input id="fromDate" type="date" class="form-control" style="width: auto; height: 40px; padding: 4px 10px;">
+            </div>
+
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="font-size:12.5px; color:var(--text-muted);">Đến ngày:</span>
+              <input id="toDate" type="date" class="form-control" style="width: auto; height: 40px; padding: 4px 10px;">
+            </div>
+
+            <select class="filter-select" id="location">
+              <option value="all">Tất cả tỉnh / thành</option>
+              <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+              <option value="Hà Nội">Hà Nội</option>
+              <option value="Đà Nẵng">Đà Nẵng</option>
+              <option value="Cần Thơ">Cần Thơ</option>
+            </select>
+
+            <button class="btn btn-primary" id="filterBtn" style="display:inline-flex; align-items:center; gap:6px;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+              </svg>
+              Áp dụng lọc
+            </button>
+            <button class="btn btn-secondary" id="resetBtn" style="display:inline-flex; align-items:center; gap:6px;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Đặt lại
+            </button>
+          </div>
+        </div>
+
+        <!-- Bảng Quản Lý Đơn Hàng -->
+        <div class="card">
+          <div class="card-header" style="margin-bottom: 14px;">
+            <div class="card-title">
+              <span>Bảng danh sách đơn hàng</span>
+              <span id="resultCount" class="badge badge-gray">0 đơn hàng</span>
+            </div>
+            <div style="font-size: 12.5px; color: var(--text-muted);">
+              Có thể đổi trạng thái đơn hàng trực tiếp tùy ý ngay tại cột Trạng thái
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Mã đơn</th>
+                  <th>Khách hàng</th>
+                  <th>Thời gian</th>
+                  <th>Địa điểm</th>
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái (Đổi nhanh)</th>
+                  <th style="text-align: right;">Chi tiết</th>
+                </tr>
+              </thead>
+              <tbody id="orderRows">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination-wrap">
+            <div class="pagination-info" id="orderPaginationText">Đang tải danh sách...</div>
+            <div class="pagination-controls" id="paginationControls"></div>
+          </div>
+        </div>
+
+        <!-- Thống Kê Khách Hàng & Phân Bổ Trạng Thái -->
+        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 24px;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Top Khách Hàng Chi Tiêu Cao Nhất</h2>
+                <span class="card-subtitle">Xếp hạng theo tổng giá trị các đơn đặt hàng trong khoảng thời gian chọn</span>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <input id="statsFromDate" type="date" class="form-control" style="height:34px; width:140px;" aria-label="Từ ngày thống kê">
+                <input id="statsToDate" type="date" class="form-control" style="height:34px; width:140px;" aria-label="Đến ngày thống kê">
+                <button class="btn btn-primary btn-sm" id="statsBtn">Thống kê</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th style="width: 50px;">Hạng</th>
+                    <th>Khách hàng</th>
+                    <th style="text-align: center;">Số đơn</th>
+                    <th style="text-align: right;">Tổng chi tiêu</th>
+                    <th style="text-align: right;">Danh sách đơn</th>
+                  </tr>
+                </thead>
+                <tbody id="customerRows"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Phân Bổ Trạng Thái Đơn Hàng</h2>
+            </div>
+            <div id="statusSummary" style="display:flex; flex-direction:column; gap:16px;"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL: DANH SÁCH TẤT CẢ ĐƠN HÀNG CỦA KHÁCH HÀNG (THEO YÊU CẦU) -->
+  <div class="modal-backdrop" id="customerOrdersModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span>Tất cả đơn hàng của: <strong id="modalCustomerName" style="color:var(--primary);"></strong></span>
+        </div>
+        <button type="button" class="btn-close-modal" onclick="closeCustomerOrdersModal()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; background:var(--bg-app); padding:12px 16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+          <span style="font-size:13.5px; color:var(--text-muted);">Tổng số đơn đã mua: <strong id="modalCustomerCount" style="color:var(--text-main);">0 đơn</strong></span>
+          <span style="font-size:13.5px; color:var(--text-muted);">Tổng giá trị chi tiêu: <strong id="modalCustomerTotal" style="color:var(--primary); font-size:16px;">0 đ</strong></span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Mã đơn</th>
+                <th>Ngày đặt</th>
+                <th>Sản phẩm đã mua</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái</th>
+                <th style="text-align: right;">Chi tiết</th>
+              </tr>
+            </thead>
+            <tbody id="modalCustomerOrdersBody">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 14px 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end;">
+        <button type="button" class="btn btn-secondary" onclick="closeCustomerOrdersModal()">Đóng cửa sổ</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="../js/admin.js"></script>
+  <script>
+    // Tải danh sách đơn hàng từ localStorage (hoặc hàm getAdminOrders() trong admin.js)
+    let orders = getAdminOrders();
+
+    let filteredOrders = [...orders];
+    let currentPage = 1;
+    const itemsPerPage = 5;
+
+    function getStatusClass(status) {
+      if (status === 'Chưa xác nhận') return 'badge badge-warning';
+      if (status === 'Đã xác nhận') return 'badge badge-info';
+      if (status === 'Đã giao') return 'badge badge-success';
+      if (status === 'Hủy đơn') return 'badge badge-danger';
+      return 'badge badge-gray';
+    }
+
+    // Render Table Đơn Hàng
+    function render() {
+      const search = normalizeText(document.querySelector('#search').value);
+      const status = document.querySelector('#statusFilter').value;
+      const fromDate = document.querySelector('#fromDate').value;
+      const toDate = document.querySelector('#toDate').value;
+      const locInput = document.querySelector('#location');
+      const loc = locInput ? normalizeText(locInput.value) : '';
+
+      filteredOrders = orders.filter(o => {
+        const matchSearch = normalizeText(o.id).includes(search) || normalizeText(o.customer).includes(search);
+        const matchStatus = status === 'all' || o.status === status;
+        const matchDate = (!fromDate || o.date >= fromDate) && (!toDate || o.date <= toDate);
+        const matchLoc = !loc || loc === 'all' || normalizeText(o.location).includes(loc);
+        return matchSearch && matchStatus && matchDate && matchLoc;
+      });
+
+      document.querySelector('#resultCount').textContent = `${filteredOrders.length} đơn hàng`;
+
+      // Pagination
+      const totalPages = Math.ceil(filteredOrders.length / itemsPerPage) || 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const paginatedData = filteredOrders.slice(startIndex, startIndex + itemsPerPage);
+
+      document.querySelector('#orderPaginationText').textContent = 
+        filteredOrders.length > 0 
+          ? `Hiển thị ${startIndex + 1} - ${Math.min(startIndex + itemsPerPage, filteredOrders.length)} của ${filteredOrders.length} đơn hàng`
+          : 'Không có dữ liệu';
+
+      const tbody = document.querySelector('#orderRows');
+      if (paginatedData.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:30px; color:var(--text-muted);">Không tìm thấy đơn hàng phù hợp với điều kiện tìm kiếm.</td></tr>`;
+      } else {
+        tbody.innerHTML = paginatedData.map(o => `
+          <tr>
+            <td><span class="code-pill" style="font-weight:700;">#${o.id}</span></td>
+            <td><strong style="color:var(--text-main);">${o.customer}</strong></td>
+            <td style="color:var(--text-muted); font-size:13px;">${new Date(o.date).toLocaleDateString('vi-VN')}</td>
+            <td>${o.location}</td>
+            <td><strong style="color:var(--text-main); font-size:14px;">${formatVND(o.total)}</strong></td>
+            <td>
+              <select class="form-select-input" data-id="${o.id}" style="width: auto; padding: 4px 8px; font-size: 12.5px; height: 32px; font-weight:600;">
+                <option value="Chưa xác nhận" ${o.status === 'Chưa xác nhận' ? 'selected' : ''}>⚠️ Chưa xác nhận</option>
+                <option value="Đã xác nhận" ${o.status === 'Đã xác nhận' ? 'selected' : ''}>📦 Đã xác nhận</option>
+                <option value="Đã giao" ${o.status === 'Đã giao' ? 'selected' : ''}>✓ Đã giao</option>
+                <option value="Hủy đơn" ${o.status === 'Hủy đơn' ? 'selected' : ''}>✕ Hủy đơn</option>
+              </select>
+            </td>
+            <td style="text-align: right;">
+              <a class="btn btn-secondary btn-sm" href="order-detail.html?id=${encodeURIComponent(o.id)}">
+                Xem chi tiết
+              </a>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      renderPaginationControls(totalPages);
+      attachEventListeners();
+    }
+
+    function renderPaginationControls(totalPages) {
+      const paginationDiv = document.querySelector('#paginationControls');
+      let html = '';
+      if (totalPages > 1) {
+        html += `<button class="page-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>&laquo;</button>`;
+        for (let i = 1; i <= totalPages; i++) {
+          html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" onclick="changePage(${i})">${i}</button>`;
+        }
+        html += `<button class="page-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>&raquo;</button>`;
+      }
+      paginationDiv.innerHTML = html;
+    }
+
+    window.changePage = function(page) {
+      const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
+      if (page >= 1 && page <= totalPages) {
+        currentPage = page;
+        render();
+      }
+    };
+
+    function attachEventListeners() {
+      // Thay đổi trạng thái tùy ý, không ràng buộc
+      document.querySelectorAll('select[data-id]').forEach(select => {
+        select.onchange = (e) => {
+          const orderId = e.target.dataset.id;
+          const newStatus = e.target.value;
+          const order = orders.find(x => x.id === orderId);
+
+          if (order) {
+            order.status = newStatus;
+            saveAdminOrders(orders);
+            renderStats();
+            showToast(`Đã cập nhật trạng thái đơn #${orderId} thành "${newStatus}"`, 'success');
+          }
+        };
+      });
+    }
+
+    // Render Thống kê KPI & Khách hàng
+    function renderStats() {
+      const pendingCount = orders.filter(o => o.status === 'Chưa xác nhận').length;
+      document.querySelector('#totalOrders').textContent = orders.length;
+      document.querySelector('#pendingOrders').textContent = pendingCount;
+      document.querySelector('#deliveredOrders').textContent = orders.filter(o => o.status === 'Đã giao').length;
+      document.querySelector('#revenue').textContent = formatVND(orders.filter(o => o.status !== 'Hủy đơn').reduce((sum, o) => sum + o.total, 0));
+      
+      const sidePending = document.querySelector('#sidePendingCount');
+      if (sidePending) sidePending.textContent = `${pendingCount} mới`;
+
+      // Khách hàng chi tiêu cao
+      const statsFrom = document.querySelector('#statsFromDate')?.value || '';
+      const statsTo = document.querySelector('#statsToDate')?.value || '';
+      const statsOrders = orders.filter(o => (!statsFrom || o.date >= statsFrom) && (!statsTo || o.date <= statsTo));
+      const customerStats = {};
+      statsOrders.forEach(o => {
+        if (!customerStats[o.customer]) customerStats[o.customer] = { count: 0, total: 0, orders: [] };
+        customerStats[o.customer].count++;
+        customerStats[o.customer].total += o.total;
+        customerStats[o.customer].orders.push(o);
+      });
+
+      const sortedCustomers = Object.entries(customerStats).sort((a, b) => b[1].total - a[1].total);
+      
+      document.querySelector('#customerRows').innerHTML = sortedCustomers.slice(0, 5).map(([name, data], idx) => {
+        let rankBadge = `<span class="badge badge-gray">${idx + 1}</span>`;
+        if (idx === 0) rankBadge = `<span class="badge badge-warning" style="font-weight:700;">🥇 1</span>`;
+        else if (idx === 1) rankBadge = `<span class="badge badge-gray" style="font-weight:700;">🥈 2</span>`;
+        else if (idx === 2) rankBadge = `<span class="badge badge-gray" style="font-weight:700;">🥉 3</span>`;
+
+        return `
+          <tr>
+            <td>${rankBadge}</td>
+            <td><strong>${name}</strong></td>
+            <td style="text-align: center;"><span class="badge badge-gray">${data.count} đơn</span></td>
+            <td style="text-align: right; color:var(--text-main); font-weight:700;">${formatVND(data.total)}</td>
+            <td style="text-align: right;">
+              <button class="btn btn-primary btn-sm" onclick="openCustomerOrdersModal('${name.replace(/'/g, "\\'")}')">
+                Xem ${data.count} đơn hàng
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      // Phân bổ trạng thái
+      const total = orders.length;
+      const statuses = ['Chưa xác nhận', 'Đã xác nhận', 'Đã giao', 'Hủy đơn'];
+      const colors = { 'Chưa xác nhận': 'var(--warning)', 'Đã xác nhận': 'var(--primary)', 'Đã giao': 'var(--success)', 'Hủy đơn': 'var(--danger)' };
+      
+      document.querySelector('#statusSummary').innerHTML = statuses.map(status => {
+        const count = orders.filter(o => o.status === status).length;
+        const percent = total > 0 ? ((count / total) * 100).toFixed(1) : 0;
+        return `
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:13px;">
+              <span style="font-weight:600;">${status}</span>
+              <strong>${count} đơn (${percent}%)</strong>
+            </div>
+            <div style="height:8px; background:#f1f5f9; border-radius:var(--radius-full); overflow:hidden;">
+              <div style="width: ${percent}%; height: 100%; background: ${colors[status]}; border-radius: var(--radius-full);"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Modal hiển thị bảng tất cả các đơn hàng của khách hàng
+    window.openCustomerOrdersModal = function(customerName) {
+      const statsFrom = document.querySelector('#statsFromDate')?.value || '';
+      const statsTo = document.querySelector('#statsToDate')?.value || '';
+      
+      const custOrders = orders.filter(o => 
+        o.customer === customerName &&
+        (!statsFrom || o.date >= statsFrom) &&
+        (!statsTo || o.date <= statsTo)
+      );
+
+      const totalSpent = custOrders.reduce((sum, o) => sum + o.total, 0);
+
+      document.querySelector('#modalCustomerName').textContent = customerName;
+      document.querySelector('#modalCustomerCount').textContent = `${custOrders.length} đơn`;
+      document.querySelector('#modalCustomerTotal').textContent = formatVND(totalSpent);
+
+      const tbody = document.querySelector('#modalCustomerOrdersBody');
+      if (custOrders.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:20px; color:var(--text-muted);">Không có đơn hàng nào trong khoảng thời gian đã chọn.</td></tr>`;
+      } else {
+        tbody.innerHTML = custOrders.map(o => {
+          let badgeClass = 'badge-warning';
+          if (o.status === 'Đã giao') badgeClass = 'badge-success';
+          else if (o.status === 'Đã xác nhận') badgeClass = 'badge-info';
+          else if (o.status === 'Hủy đơn') badgeClass = 'badge-danger';
+
+          const itemsSummary = o.items && o.items.length 
+            ? o.items.map(it => `${it[0]} (x${it[1]})`).join(', ')
+            : 'Mặt hàng thời trang';
+
+          return `
+            <tr>
+              <td><span class="code-pill">#${o.id}</span></td>
+              <td style="color:var(--text-muted); font-size:13px;">${new Date(o.date).toLocaleDateString('vi-VN')}</td>
+              <td>
+                <div style="font-size:13px; color:var(--text-main); max-width:260px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;" title="${itemsSummary}">
+                  ${itemsSummary}
+                </div>
+              </td>
+              <td><strong style="color:var(--text-main);">${formatVND(o.total)}</strong></td>
+              <td><span class="badge ${badgeClass}">${o.status}</span></td>
+              <td style="text-align: right;">
+                <a class="btn btn-secondary btn-sm" href="order-detail.html?id=${encodeURIComponent(o.id)}">
+                  Chi tiết &rarr;
+                </a>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      document.querySelector('#customerOrdersModal').classList.add('open');
+    };
+
+    window.closeCustomerOrdersModal = function() {
+      document.querySelector('#customerOrdersModal').classList.remove('open');
+    };
+
+    // Filter Listeners: Chỉ tìm kiếm khi nhấn nút "Áp dụng lọc" (không tự động tìm khi gõ)
+    document.querySelector('#filterBtn').onclick = () => {
+      currentPage = 1;
+      render();
+    };
+
+    // Hỗ trợ nhấn Enter trong ô tìm kiếm để áp dụng lọc
+    document.querySelector('#search').onkeydown = (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.querySelector('#filterBtn').click();
+      }
+    };
+    
+    document.querySelector('#resetBtn').onclick = () => {
+      document.querySelector('#search').value = '';
+      document.querySelector('#fromDate').value = '';
+      document.querySelector('#toDate').value = '';
+      const locInput = document.querySelector('#location');
+      if (locInput) locInput.value = 'all';
+      document.querySelector('#statusFilter').value = 'all';
+      currentPage = 1;
+      render();
+    };
+
+    document.querySelector('#statsBtn').onclick = () => {
+      const from = document.querySelector('#statsFromDate').value;
+      const to = document.querySelector('#statsToDate').value;
+      if (from && to && from > to) {
+        showToast('Ngày bắt đầu không được lớn hơn ngày kết thúc.', 'warning');
+        return;
+      }
+      renderStats();
+    };
+
+    // Initial run
+    renderStats();
+    render();
+  </script>
+</body>
+</html>

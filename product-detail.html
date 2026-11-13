@@ -18,19 +18,20 @@
             <a href="index.html">Sản Phẩm</a>
             <a href="cart.html">Giỏ Hàng</a>
             <a href="account.html">Tài Khoản</a>
+            <a href="admin/login.html" style="color: #38bdf8;">Quản Trị Admin</a>
         </nav>
     </header>
 
     <!-- Chi tiết sản phẩm -->
     <div class="container detail-container">
         <div class="product-image-large">
-            <img src="images/jacket-brown.png" alt="Chi tiết sản phẩm">
+            <img src="images/jacket-black.png" alt="Chi tiết sản phẩm">
         </div>
         <div class="product-info-detail">
-            <h1 id="productName">Áo Thun Nam Cotton Form Rộng</h1>
-            <p class="price-large" id="productPrice">150,000 đ</p>
+            <h1 id="productName">Áo Khoác Da Lộn Nam Cao Cấp (Đen)</h1>
+            <p class="price-large" id="productPrice">1,299,000 đ</p>
             <p class="description">
-                Mô tả chi tiết: Sản phẩm chất liệu cotton 100% thoáng mát, co giãn 4 chiều, thấm hút mồ hôi tốt. Phù hợp mặc đi chơi, dạo phố hoặc tập thể thao.
+                Mô tả chi tiết: Chất liệu da lộn mềm mịn, lót gió giữ ấm tốt, form ôm thanh lịch phong cách cá tính.
             </p>
             
             <div class="action-group">
@@ -44,5 +45,18 @@
         </div>
     </div>
 
+    <!-- Frontend JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Load thông tin chi tiết sản phẩm dựa theo query ?id=
+        const prodId = new URLSearchParams(window.location.search).get('id') || 1;
+        const prod = SHOP_PRODUCTS.find(p => p.id == prodId);
+        if (prod) {
+            document.querySelector('#productName').textContent = prod.name;
+            document.querySelector('#productPrice').textContent = formatMoney(prod.price);
+            document.querySelector('.product-image-large img').src = prod.image;
+            document.querySelector('.description').textContent = 'Mô tả chi tiết: ' + prod.desc;
+        }
+    </script>
 </body>
 </html>
