@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Sản Phẩm</title>
+    <title>Chi Tiết Sản Phẩm - ShopCloth</title>
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,38 +12,86 @@
     <!-- Header / Navbar -->
     <header class="main-header">
         <div class="logo">
-            <a href="index.html">ShopCloth</a>
+            <a href="index.html">
+                <span class="logo-badge-icon">🐱</span>
+                <span>ShopCloth</span>
+            </a>
         </div>
-        <nav class="navbar">
-            <a href="index.html">Trang Chủ</a>
-            <a href="index.html">Sản Phẩm</a>
-            <a href="cart.html">Giỏ Hàng</a>
-            <a href="account.html">Tài Khoản</a>
-        </nav>
+        <div class="header-right-group">
+            <nav class="navbar">
+                <!-- Nút Home icon -->
+                <a href="index.html" class="nav-home-btn" title="Trang chủ">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </a>
+            </nav>
+
+            <!-- Icon Giỏ Hàng có Badge số lượng -->
+            <a href="cart.html" class="nav-cart-btn" title="Giỏ hàng của bạn">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                <span id="cartCountBadge" class="cart-badge"></span>
+            </a>
+
+            <!-- Phần người dùng nằm bên trái nút 3 gạch -->
+            <div id="navUserSlot" style="display: inline-flex; align-items: center;">
+                <a href="account.html" class="nav-account-link" style="color: #cbd5e1; font-size: 14.5px; font-weight: 500; text-decoration: none; padding: 6px 12px;">Tài Khoản</a>
+            </div>
+
+            <!-- Góc nút 3 gạch (không nền) -->
+            <div class="menu-toggle-wrapper">
+                <button type="button" class="btn-hamburger" id="btnHamburgerMenu" title="Menu quản trị">
+                    ☰
+                </button>
+                <div class="hamburger-dropdown" id="hamburgerDropdown">
+                    <a href="admin/login.html">
+                        <span>🔐</span>
+                        <span>Đăng nhập quản trị</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Chi tiết sản phẩm -->
-    <div class="container detail-container">
-        <div class="product-image-large">
-            <img src="images/jacket-brown.png" alt="Chi tiết sản phẩm">
-        </div>
-        <div class="product-info-detail">
-            <h1 id="productName">Áo Thun Nam Cotton Form Rộng</h1>
-            <p class="price-large" id="productPrice">150,000 đ</p>
-            <p class="description">
-                Mô tả chi tiết: Sản phẩm chất liệu cotton 100% thoáng mát, co giãn 4 chiều, thấm hút mồ hôi tốt. Phù hợp mặc đi chơi, dạo phố hoặc tập thể thao.
-            </p>
-            
-            <div class="action-group">
-                <label for="quantity">Số lượng:</label>
-                <input type="number" id="quantity" value="1" min="1" style="width: 60px; padding: 5px;">
-                <button class="btn-primary" id="btnAddCart">Thêm vào giỏ hàng</button>
+    <div class="container" style="display: block;">
+        <div class="detail-container">
+            <div class="product-image-large">
+                <img src="images/product-jacket-black.png" alt="Chi tiết sản phẩm">
             </div>
-            
-            <br>
-            <a href="index.html" class="back-link">&larr; Quay lại trang sản phẩm</a>
+            <div class="product-info-detail">
+                <h1 id="productName">Áo Khoác Da Lộn Nam Cao Cấp (Đen)</h1>
+                <p class="price-large" id="productPrice">1,299,000 đ</p>
+                <p class="description">
+                    Mô tả chi tiết: Chất liệu da lộn mềm mịn, lót gió giữ ấm tốt, form ôm thanh lịch phong cách cá tính.
+                </p>
+                
+                <div class="action-group">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" value="1" min="1" style="width: 70px; padding: 8px;">
+                    <button class="btn-primary" id="btnAddCart" style="width: auto; padding: 10px 24px;">Thêm vào giỏ hàng</button>
+                </div>
+                
+                <br>
+                <a href="index.html" class="back-link">&larr; Quay lại trang sản phẩm</a>
+            </div>
         </div>
     </div>
 
+    <!-- Frontend JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Load thông tin chi tiết sản phẩm dựa theo query ?id=
+        const prodId = new URLSearchParams(window.location.search).get('id') || 1;
+        const prod = SHOP_PRODUCTS.find(p => p.id == prodId);
+        if (prod) {
+            document.querySelector('#productName').textContent = prod.name;
+            document.querySelector('#productPrice').textContent = formatMoney(prod.price);
+            document.querySelector('.product-image-large img').src = prod.image;
+            document.querySelector('.description').textContent = 'Mô tả chi tiết: ' + prod.desc;
+        }
+    </script>
 </body>
 </html>

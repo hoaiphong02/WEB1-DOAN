@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Quần Áo - Lịch sử mua hàng</title>
+  <link rel="icon" type="image/png" href="images/logo-cat.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+        <a href="logged-index.html">ShopCloth</a>
+    </div>
+    <nav class="navbar" style="display: flex; align-items: center; gap: 20px;">
+        <a href="logged-index.html">Trang Chủ</a>
+        <a href="logged-index.html">Sản Phẩm</a>
+        <a href="cart.html">Giỏ Hàng</a>
+        <a href="account.html" class="user-nav-profile" style="display: flex; align-items: center; gap: 8px; text-decoration: none; margin-left: 0;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background-color: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; border: 1px solid #38bdf8;">N</div>
+            <span style="color: #f8fafc; font-weight: 600; font-size: 14px;">Nguyễn Văn A</span>
+        </a>
+    </nav>
+</header>
+
+
+  <div class="account-wrapper">
+    <div class="account-top-card">
+      <div class="user-profile-group">
+        <div class="avatar-circle">NV</div>
+        <div>
+          <div class="user-name">Nguyễn Văn A</div>
+          <div class="user-phone">📞 0901234567</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:20px;">
+        <div>
+          <div style="font-size:16px; font-weight:bold;">5 đơn hàng</div>
+          <div style="font-size:11px; color:#64748b;">Tổng số đơn đã mua</div>
+        </div>
+        <div>
+          <div style="font-size:16px; font-weight:bold;" class="price-text">4.250.000đ</div>
+          <div style="font-size:11px; color:#64748b;">Tổng tiền chi tiêu</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="account-main-grid">
+      <aside class="account-sidebar-nav">
+        <a href="account.html" class="nav-item-btn">📊 Tổng quan</a>
+        <a href="history.html" class="nav-item-btn active">📦 Lịch sử mua hàng</a>
+        <a href="cart.html" class="nav-item-btn">🛒 Giỏ hàng</a>
+        <hr class="sidebar-divider">
+        <a href="index.html" class="nav-item-btn" style="color: #dc2626;">🚪 Đăng xuất</a>
+      </aside>
+
+      <main class="account-content-card">
+        <div class="card-heading"><span>Tất cả đơn hàng đã mua</span></div>
+        <div id="dynamicHistoryList">
+          <!-- Rendered dynamically by script below -->
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('dynamicHistoryList');
+      if (!container) return;
+
+      let orders = [];
+      try {
+        orders = JSON.parse(localStorage.getItem('shopcloth_user_orders') || '[]');
+        if (orders.length === 0) {
+          orders = JSON.parse(localStorage.getItem('adminOrders') || '[]');
+        }
+      } catch (_) {}
+
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:40px; color:#94a3b8;">
+            <p>Bạn chưa có đơn đặt hàng nào.</p>
+            <a href="index.html" class="btn-primary" style="display:inline-block; width:auto; padding:10px 20px; margin-top:14px; text-decoration:none;">Mua sắm ngay</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = orders.map(o => {
+        let badgeClass = 'status-orange';
+        if (o.status === 'Đã giao') badgeClass = 'status-green';
+
+        const firstItem = (o.items && o.items[0]) ? o.items[0] : ['Sản phẩm thời trang', 1, o.total];
+        const extraText = (o.items && o.items.length > 1) ? ` (+${o.items.length - 1} món khác)` : '';
+
+        return `
+          <div class="order-box-item">
+            <div class="order-box-head">
+              <span><strong>#${o.id}</strong> • ${new Date(o.date).toLocaleDateString('vi-VN')}</span>
+              <span class="badge-status ${badgeClass}">${o.status}</span>
+            </div>
+            <div class="order-box-body">
+              <div>
+                <strong>${firstItem[0]} (x${firstItem[1]})</strong>${extraText}
+                <div style="font-size:12.5px; color:#94a3b8; margin-top:4px;">Người nhận: ${o.customer} • ${o.phone}</div>
+              </div>
+            </div>
+            <div class="order-box-foot" style="display:flex; justify-content:space-between; align-items:center;">
+              <a href="order-detail.html?id=${encodeURIComponent(o.id)}" style="color:#38bdf8; font-size:13px; font-weight:600;">Xem chi tiết &rarr;</a>
+              <div>Tổng: <strong class="price-text">${formatMoney(o.total)}</strong></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    });
+  </script>
+</body>
+</html>

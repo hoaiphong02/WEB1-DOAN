@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản Khách Hàng - ShopCloth</title>
+    <link rel="icon" type="image/png" href="images/logo-cat.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <span class="logo-badge-icon">🐱</span>
+                <span>ShopCloth</span>
+            </a>
+        </div>
+        <div class="header-right-group">
+            <nav class="navbar">
+                <!-- Nút Home icon -->
+                <a href="index.html" class="nav-home-btn" title="Trang chủ">
+                    <svg width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </a>
+            </nav>
+
+            <!-- Icon Giỏ Hàng có Badge số lượng -->
+            <a href="cart.html" class="nav-cart-btn" title="Giỏ hàng của bạn">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+                <span id="cartCountBadge" class="cart-badge"></span>
+            </a>
+
+            <!-- Phần người dùng nằm bên trái nút 3 gạch -->
+            <div id="navUserSlot" style="display: inline-flex; align-items: center;">
+                <a href="account.html" class="nav-account-link" style="color: var(--primary); font-size: 14.5px; font-weight: 600; text-decoration: none; padding: 6px 12px;">Tài Khoản</a>
+            </div>
+
+            <!-- Góc nút 3 gạch (không nền) -->
+            <div class="menu-toggle-wrapper">
+                <button type="button" class="btn-hamburger" id="btnHamburgerMenu" title="Menu quản trị">
+                    ☰
+                </button>
+                <div class="hamburger-dropdown" id="hamburgerDropdown">
+                    <a href="admin/login.html">
+                        <span>🔐</span>
+                        <span>Đăng nhập quản trị</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="flex-direction: column;">
+        <!-- Khung Đăng nhập / Đăng ký (Hiển thị khi chưa đăng nhập) -->
+        <div id="authFormsWrap" class="account-card-wrap">
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" id="tabLoginBtn" onclick="switchAuthTab('login')">Đăng Nhập</button>
+                <button type="button" class="auth-tab-btn" id="tabRegisterBtn" onclick="switchAuthTab('register')">Đăng Ký</button>
+            </div>
+
+            <!-- Form Đăng Nhập (Bỏ hết ràng buộc) -->
+            <form id="userLoginForm">
+                <div class="form-group-customer">
+                    <label for="loginUserEmail">Email hoặc Tên tài khoản:</label>
+                    <input type="text" id="loginUserEmail" class="form-control-customer" placeholder="vd: nguyenvana@gmail.com" value="nguyenvanan@gmail.com">
+                </div>
+
+                <div class="form-group-customer">
+                    <label for="loginUserPassword">Mật khẩu:</label>
+                    <input type="password" id="loginUserPassword" class="form-control-customer" placeholder="Nhập mật khẩu bất kỳ" value="123456">
+                </div>
+
+                <button type="submit" class="btn-primary" style="padding: 14px; font-size: 15.5px; border-radius: 14px;">
+                    Đăng Nhập
+                </button>
+            </form>
+
+            <!-- Form Đăng Ký (Bỏ hết ràng buộc) -->
+            <form id="userRegisterForm" style="display: none;">
+                <div class="form-group-customer">
+                    <label for="regName">Họ và tên:</label>
+                    <input type="text" id="regName" class="form-control-customer" placeholder="vd: Nguyễn Văn An">
+                </div>
+
+                <div class="form-group-customer">
+                    <label for="regEmail">Email:</label>
+                    <input type="email" id="regEmail" class="form-control-customer" placeholder="vd: an.nguyen@gmail.com">
+                </div>
+
+                <div class="form-group-customer">
+                    <label for="regPhone">Số điện thoại:</label>
+                    <input type="text" id="regPhone" class="form-control-customer" placeholder="vd: 0912345678">
+                </div>
+
+                <div class="form-group-customer">
+                    <label for="regPassword">Mật khẩu:</label>
+                    <input type="password" id="regPassword" class="form-control-customer" placeholder="Nhập mật khẩu bất kỳ">
+                </div>
+
+                <button type="submit" class="btn-primary" style="padding: 14px; font-size: 15.5px; border-radius: 14px;">
+                    Đăng Ký Tài Khoản
+                </button>
+            </form>
+        </div>
+
+        <!-- Khung Thông Tin Tài Khoản & Lịch Sử Đơn Hàng (Hiển thị khi đã đăng nhập) -->
+        <div id="accountDashboardView" style="display: none; width: 100%;">
+            <div class="cart-box" style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h2 style="margin-bottom: 4px; border-bottom: none; padding-bottom: 0;">Xin Chào, <span id="accUserName">Khách Hàng</span> 👋</h2>
+                        <p style="color: #94a3b8; font-size: 14px;">Email: <strong id="accUserEmail"></strong> • SĐT: <strong id="accUserPhone"></strong></p>
+                    </div>
+                    <button type="button" id="btnUserLogout" class="btn-primary" style="width: auto; padding: 8px 18px; background: #334155;">
+                        Đăng Xuất
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bảng Lịch Sử Đơn Hàng Của Khách Hàng -->
+            <div class="cart-box">
+                <h2>Lịch Sử Đơn Đặt Hàng Của Bạn</h2>
+                <div style="overflow-x: auto;">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn</th>
+                                <th>Ngày đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Chi tiết</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userOrderHistoryBody">
+                            <!-- Rendered by js/main.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frontend JS -->
+    <script src="js/main.js"></script>
+    <script>
+        function switchAuthTab(tab) {
+            const loginForm = document.getElementById('userLoginForm');
+            const registerForm = document.getElementById('userRegisterForm');
+            const tabLoginBtn = document.getElementById('tabLoginBtn');
+            const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+
+            if (tab === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                tabLoginBtn.classList.add('active');
+                tabRegisterBtn.classList.remove('active');
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                tabLoginBtn.classList.remove('active');
+                tabRegisterBtn.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
+

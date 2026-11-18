@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Quần Áo - Đăng nhập</title>
+  <link rel="icon" type="image/png" href="images/logo-cat.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <a href="index.html">ShopCloth</a>
+    </div>
+    <nav class="navbar" style="display: flex; align-items: center; gap: 20px;">
+      <a href="index.html">Trang Chủ</a>
+      <a href="cart.html">Giỏ Hàng</a>
+      <a href="register.html">Đăng ký tài khoản</a>
+    </nav>
+  </header>
+
+  <div class="auth-page-container">
+    <div class="auth-card">
+      <h2 class="auth-card-title">Đăng nhập tài khoản</h2>
+      <!-- Đã đổi action thành logged-index.html, bỏ hết ràng buộc -->
+      <form class="auth-form" id="loginFormDirect" action="logged-index.html">
+        <div class="auth-field">
+          <label>Số điện thoại hoặc Email</label>
+          <input type="text" id="loginContactInput" placeholder="0901234567" value="nguyenvanan@gmail.com">
+        </div>
+        <div class="auth-field">
+          <label>Mật khẩu</label>
+          <input type="password" id="loginPassInput" placeholder="••••••••" value="123456">
+        </div>
+        <button type="submit" class="btn-primary-custom" style="width: 100%;">Đăng nhập</button>
+      </form>
+      <div class="auth-footer-text">
+        <span>Chưa có tài khoản? </span><a href="register.html">Tạo tài khoản mới</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginFormDirect').addEventListener('submit', function(e) {
+      const contact = document.getElementById('loginContactInput').value.trim() || 'nguyenvanan@gmail.com';
+      const name = contact.includes('@') ? contact.split('@')[0].toUpperCase() : 'NGUYỄN VĂN A';
+      localStorage.setItem('shopcloth_current_user', JSON.stringify({
+        name: name,
+        email: contact.includes('@') ? contact : contact + '@gmail.com',
+        phone: contact.includes('@') ? '0901234567' : contact
+      }));
+    });
+  </script>
+</body>
+</html>

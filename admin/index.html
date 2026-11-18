@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Bảng điều khiển (Dashboard)</title>
+  <link rel="icon" type="image/png" href="../images/logo-cat.png">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+  <div class="admin-layout">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Sidebar Layout -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AdminStore</span>
+          <span class="brand-subtitle">Quản trị hệ thống</span>
+        </div>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Tổng quan</div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link active">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span>Quản lý User</span>
+              <span class="nav-badge">10</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <span>Quản lý Sản phẩm</span>
+            </a>
+          </li>
+          <li>
+            <a href="orders.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+              <span>Quản lý Đơn hàng</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="nav-section-title">Cài đặt & Tài khoản</div>
+        <ul class="nav-list">
+          <li>
+            <a href="login.html" class="nav-link" style="color: #f87171;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-quick-profile">
+          <div class="user-avatar-sm">AD</div>
+          <div class="user-quick-info">
+            <span class="user-quick-name">Nguyễn Văn Admin</span>
+            <span class="user-quick-role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="btn-mobile-sidebar" aria-label="Toggle menu">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <nav class="breadcrumb">
+            <span>Admin</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Dashboard</span>
+          </nav>
+        </div>
+
+        <div class="topbar-right">
+
+          <a href="users.html" class="profile-dropdown-btn">
+          </a>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-container">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="page-title-group">
+            <h1>Tổng Quan Hệ Thống</h1>
+            <p>Báo cáo hiệu suất kinh doanh, đơn hàng và hoạt động người dùng.</p>
+          </div>
+          <div class="page-actions">
+            <div class="date-badge" id="currentDateBadge">Hôm nay</div>
+            <button class="btn btn-secondary btn-sm"
+              onclick="syncDashboardData(); showToast('Dữ liệu đã được đồng bộ mới nhất!', 'success')">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Làm mới
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Stat Cards (Được đồng bộ tự động) -->
+        <div class="stat-grid">
+          <!-- Card 1: Doanh Thu -->
+          <div class="stat-card blue">
+            <div class="stat-info">
+              <p>Tổng Doanh Thu</p>
+              <div class="stat-value" id="dashboardRevenue">0 đ</div>
+              <span class="stat-trend up">
+                <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+                +18.4% tháng này
+              </span>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 2: Đơn Hàng Mới -->
+          <div class="stat-card orange">
+            <div class="stat-info">
+              <p>Đơn Hàng & Chờ Xử Lý</p>
+              <div class="stat-value" id="dashboardOrderCount">0 đơn</div>
+              <span class="stat-trend up" id="dashboardPendingDesc"
+                style="color:var(--warning); background:var(--warning-soft);">
+                0 đơn chưa xác nhận
+              </span>
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 3: Thành Viên -->
+          <div class="stat-card purple">
+            <div class="stat-info">
+              <p>Thành Viên / User</p>
+              <div class="stat-value" id="dashboardUserCount">5 người</div>
+
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Card 4: Sản Phẩm -->
+          <div class="stat-card green">
+            <div class="stat-info">
+              <p>Sản Phẩm Đang Bán</p>
+              <div class="stat-value" id="dashboardProductCount">10 mã</div>
+
+            </div>
+            <div class="stat-icon-wrap">
+              <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Charts & Breakdown Grid -->
+        <div class="dashboard-grid">
+          <!-- Revenue Trend Bar Chart -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">Biểu Đồ Doanh Thu 7 Ngày Gần Nhất</h2>
+                <span class="card-subtitle">Đơn vị: Triệu VNĐ</span>
+              </div>
+            </div>
+
+            <!-- CSS Bar Chart with Hover Tooltips -->
+            <div class="chart-bars-wrap">
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 45%;">
+                  <span class="bar-tooltip">T2: 1.450.000 đ</span>
+                </div>
+                <span class="bar-label">Thứ 2</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 60%;">
+                  <span class="bar-tooltip">T3: 2.100.000 đ</span>
+                </div>
+                <span class="bar-label">Thứ 3</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 52%;">
+                  <span class="bar-tooltip">T4: 1.750.000 đ</span>
+                </div>
+                <span class="bar-label">Thứ 4</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 85%; background: linear-gradient(180deg, #10b981, #34d399);">
+                  <span class="bar-tooltip">T5: 3.200.000 đ (Đỉnh)</span>
+                </div>
+                <span class="bar-label">Thứ 5</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 70%;">
+                  <span class="bar-tooltip">T6: 2.210.000 đ</span>
+                </div>
+                <span class="bar-label">Thứ 6</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 95%; background: linear-gradient(180deg, #6366f1, #818cf8);">
+                  <span class="bar-tooltip">T7: 4.150.000 đ</span>
+                </div>
+                <span class="bar-label">Thứ 7</span>
+              </div>
+              <div class="bar-col">
+                <div class="bar-pill" style="height: 75%;">
+                  <span class="bar-tooltip">CN: 2.800.000 đ</span>
+                </div>
+                <span class="bar-label">CN</span>
+              </div>
+            </div>
+            <div
+              style="display:flex; justify-content:space-between; margin-top:14px; font-size:12.5px; color:var(--text-muted);">
+              <span>Tổng doanh thu tuần: <strong id="chartWeeklyTotal">0 đ</strong></span>
+            </div>
+          </div>
+
+          <!-- Order Status Breakdown (Đồng bộ trực tiếp từ adminOrders) -->
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Tỷ Lệ Đơn Hàng</h2>
+              <a href="orders.html" style="font-size:12.5px; color:var(--primary); font-weight:600;">Xem tất cả</a>
+            </div>
+            <div id="dashboardStatusBars" style="display:flex; flex-direction:column; gap:16px;">
+              <!-- Rendered dynamically -->
+            </div>
+
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--border-color);">
+              <h3 style="font-size:13px; font-weight:700; color:var(--navy-700); margin-bottom:12px;">Hoạt Động Gần Đây
+              </h3>
+              <div class="activity-stream" id="dashboardActivityStream">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BẢNG: Đơn Hàng Mới Nhất Chờ Xử Lý (ĐỒNG BỘ DỮ LIỆU TỪ adminOrders) -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Đơn Hàng Mới Nhất Chờ Xử Lý</h2>
+              <span class="card-subtitle">Đồng bộ trực tiếp theo thời gian thực từ dữ liệu quản lý đơn hàng</span>
+            </div>
+            <a href="orders.html" class="btn btn-primary btn-sm">Xem toàn bộ đơn hàng &rarr;</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Mã đơn</th>
+                  <th>Khách hàng</th>
+                  <th>Thời gian</th>
+                  <th>Tổng tiền</th>
+                  <th>Trạng thái</th>
+                  <th style="text-align: right;">Hành động</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardRecentOrders">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="../js/admin.js"></script>
+  <script>
+    // Hàm đồng bộ hiển thị Dashboard theo đúng adminOrders
+    function syncDashboardData() {
+      const orders = getAdminOrders();
+
+      // 1. Tổng doanh thu (Các đơn không bị hủy)
+      const validOrders = orders.filter(o => o.status !== 'Hủy đơn');
+      const totalRevenue = validOrders.reduce((sum, o) => sum + (o.total || 0), 0);
+      document.querySelector('#dashboardRevenue').textContent = formatVND(totalRevenue);
+      document.querySelector('#chartWeeklyTotal').textContent = formatVND(totalRevenue);
+
+      // 2. Tổng đơn hàng và số đơn chưa xác nhận
+      const pendingOrders = orders.filter(o => o.status === 'Chưa xác nhận');
+      document.querySelector('#dashboardOrderCount').textContent = `${orders.length} đơn`;
+      document.querySelector('#dashboardPendingDesc').textContent = `${pendingOrders.length} đơn chưa xác nhận (Mới)`;
+
+      // Cập nhật badge trên sidebar
+      const sidePending = document.querySelector('#sidePendingCount');
+      if (sidePending) {
+        sidePending.textContent = `${pendingOrders.length} mới`;
+      }
+
+      // 3. Người dùng & Sản phẩm (Nếu có trong localStorage)
+      try {
+        const users = JSON.parse(localStorage.getItem('shopcloth_admin_users') || 'null');
+        if (users && users.length) {
+          document.querySelector('#dashboardUserCount').textContent = `${users.length} người`;
+        }
+      } catch (_) { }
+
+      try {
+        const products = JSON.parse(localStorage.getItem('shopcloth_admin_products') || 'null');
+        if (products && products.length) {
+          document.querySelector('#dashboardProductCount').textContent = `${products.length} mã`;
+        }
+      } catch (_) { }
+
+      // 4. Phân bổ tỷ lệ đơn hàng (Status breakdown)
+      const total = orders.length;
+      const statusList = [
+        { name: 'Đã giao thành công', key: 'Đã giao', color: 'var(--success)' },
+        { name: 'Đã xác nhận & đang vận chuyển', key: 'Đã xác nhận', color: 'var(--primary)' },
+        { name: 'Chưa xác nhận (Mới)', key: 'Chưa xác nhận', color: 'var(--warning)' },
+        { name: 'Hủy đơn', key: 'Hủy đơn', color: 'var(--danger)' }
+      ];
+
+      const statusHtml = statusList.map(st => {
+        const count = orders.filter(o => o.status === st.key).length;
+        const percent = total > 0 ? ((count / total) * 100).toFixed(1) : 0;
+        return `
+          <div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:13px;">
+              <span style="font-weight:600;">${st.name}</span>
+              <strong>${count} đơn (${percent}%)</strong>
+            </div>
+            <div style="height:8px; background:#f1f5f9; border-radius:var(--radius-full); overflow:hidden;">
+              <div style="width:${percent}%; height:100%; background:${st.color}; border-radius:var(--radius-full);"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.querySelector('#dashboardStatusBars').innerHTML = statusHtml;
+
+      // 5. Hoạt động gần đây (Activity Stream)
+      const recentForActivity = [...orders].slice(0, 3);
+      document.querySelector('#dashboardActivityStream').innerHTML = recentForActivity.map(o => {
+        let iconBg = 'var(--warning-soft)';
+        let iconColor = 'var(--warning)';
+        let iconSym = '⏳';
+        let desc = `Đơn hàng <strong>#${o.id}</strong> đang <strong>${o.status}</strong> cho khách hàng <strong>${o.customer}</strong>.`;
+
+        if (o.status === 'Đã giao') {
+          iconBg = 'var(--success-soft)';
+          iconColor = 'var(--success)';
+          iconSym = '✓';
+          desc = `Đơn hàng <strong>#${o.id}</strong> đã giao thành công cho <strong>${o.customer}</strong>.`;
+        } else if (o.status === 'Đã xác nhận') {
+          iconBg = 'var(--primary-soft)';
+          iconColor = 'var(--primary)';
+          iconSym = '📦';
+          desc = `Đơn hàng <strong>#${o.id}</strong> đã xác nhận đóng gói cho <strong>${o.customer}</strong>.`;
+        } else if (o.status === 'Hủy đơn') {
+          iconBg = 'var(--danger-soft)';
+          iconColor = 'var(--danger)';
+          iconSym = '✕';
+          desc = `Đơn hàng <strong>#${o.id}</strong> của <strong>${o.customer}</strong> đã bị hủy.`;
+        }
+
+        return `
+          <div class="activity-item">
+            <div class="activity-icon" style="background:${iconBg}; color:${iconColor};">${iconSym}</div>
+            <div>
+              <div class="activity-desc">${desc}</div>
+              <div class="activity-time">${new Date(o.date).toLocaleDateString('vi-VN')}</div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // 6. Bảng Đơn Hàng Mới Nhất Chờ Xử Lý
+      // Ưu tiên hiển thị các đơn 'Chưa xác nhận' lên đầu, sau đó theo ngày
+      const sortedOrders = [...orders].sort((a, b) => {
+        if (a.status === 'Chưa xác nhận' && b.status !== 'Chưa xác nhận') return -1;
+        if (a.status !== 'Chưa xác nhận' && b.status === 'Chưa xác nhận') return 1;
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      const displayRecent = sortedOrders.slice(0, 5);
+      const recentTbody = document.querySelector('#dashboardRecentOrders');
+
+      if (displayRecent.length === 0) {
+        recentTbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:24px; color:var(--text-muted);">Hiện chưa có đơn hàng nào trong hệ thống.</td></tr>`;
+      } else {
+        recentTbody.innerHTML = displayRecent.map(o => {
+          let badgeClass = 'badge-warning';
+          if (o.status === 'Đã giao') badgeClass = 'badge-success';
+          else if (o.status === 'Đã xác nhận') badgeClass = 'badge-info';
+          else if (o.status === 'Hủy đơn') badgeClass = 'badge-danger';
+
+          const actionText = o.status === 'Chưa xác nhận' ? 'Xử lý ngay' : 'Chi tiết';
+          const actionBtnClass = o.status === 'Chưa xác nhận' ? 'btn-primary' : 'btn-secondary';
+
+          return `
+            <tr>
+              <td><span class="code-pill">#${o.id}</span></td>
+              <td>
+                <div class="cell-info-title"><strong>${o.customer}</strong></div>
+                <div class="cell-info-sub" style="font-size:12px; color:var(--text-muted);">${o.phone} • ${o.location}</div>
+              </td>
+              <td style="color:var(--text-muted); font-size:13px;">${new Date(o.date).toLocaleDateString('vi-VN')}</td>
+              <td><strong style="color:var(--text-main); font-size:14px;">${formatVND(o.total)}</strong></td>
+              <td>
+                <span class="badge ${badgeClass}">
+                  <span class="badge-dot-indicator"></span>${o.status}
+                </span>
+              </td>
+              <td style="text-align: right;">
+                <a href="order-detail.html?id=${encodeURIComponent(o.id)}" class="btn ${actionBtnClass} btn-sm">
+                  ${actionText}
+                </a>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+
+    // Chạy đồng bộ khi trang tải xong
+    document.addEventListener('DOMContentLoaded', syncDashboardData);
+  </script>
+</body>
+
+</html>

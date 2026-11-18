@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Quản lý sản phẩm</title>
+  <link rel="icon" type="image/png" href="../images/logo-cat.png">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop"></div>
+
+    <!-- Sidebar Layout -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">AdminStore</span>
+          <span class="brand-subtitle">Quản trị hệ thống</span>
+        </div>
+      </div>
+
+      <div class="sidebar-nav-container">
+        <div class="nav-section-title">Tổng quan</div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="users.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span>Quản lý User</span>
+              <span class="nav-badge">10</span>
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="nav-link active">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              <span>Quản lý Sản phẩm</span>
+            </a>
+          </li>
+          <li>
+            <a href="orders.html" class="nav-link">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+              </svg>
+              <span>Quản lý Đơn hàng</span>
+             
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section-title">Cài đặt & Tài khoản</div>
+        <ul class="nav-list">
+          <li>
+            <a href="login.html" class="nav-link" style="color: #f87171;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
+              <span>Đăng xuất</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-quick-profile">
+          <div class="user-avatar-sm">AD</div>
+          <div class="user-quick-info">
+            <span class="user-quick-name">Nguyễn Văn Admin</span>
+            <span class="user-quick-role">Super Admin</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="admin-main">
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="btn-mobile-sidebar" aria-label="Toggle menu">
+            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <nav class="breadcrumb">
+            <span>Admin</span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Quản lý sản phẩm</span>
+          </nav>
+        </div>
+
+        
+      </header>
+
+      <!-- Page Content -->
+      <main class="page-container">
+        <!-- Page Header -->
+        <div class="page-header">
+          <div class="page-title-group">
+            <h1>Danh Mục & Kho Sản Phẩm</h1>
+            <p>Quản lý danh sách sản phẩm, giá bán, số lượng tồn kho và hình ảnh sản phẩm.</p>
+          </div>
+          <div class="page-actions">
+            <div class="topbar-right">
+          <button class="btn btn-primary" onclick="openCreateProductModal()">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            Thêm sản phẩm mới
+          </button>
+        </div>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="card" style="padding: 16px 20px; margin-bottom: 20px;">
+          <div class="filter-bar" style="margin-bottom: 0;">
+            <div class="filter-input-wrap">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input type="text" id="productSearchInput" placeholder="Tìm kiếm theo tên sản phẩm hoặc mã SKU...">
+            </div>
+
+            <select class="filter-select" id="categoryFilter">
+              <option value="all">Tất cả danh mục</option>
+              <option value="Áo khoác">Áo khoác</option>
+              <option value="Áo sơ mi/Thun">Áo sơ mi/Thun</option>
+              <option value="Quần Jean/Khaki">Quần Jean/Khaki</option>
+            </select>
+
+            <select class="filter-select" id="stockFilter">
+              <option value="all">Tất cả tồn kho</option>
+              <option value="in_stock">Còn hàng</option>
+              <option value="low_stock">Sắp hết hàng</option>
+              <option value="out_of_stock">Hết hàng</option>
+            </select>
+
+            <button class="btn btn-primary" onclick="applyProductFilter()" style="display:inline-flex;align-items:center;gap:6px;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+              </svg>
+              Áp dụng lọc
+            </button>
+            <button class="btn btn-secondary" onclick="resetProductFilters()" style="display:inline-flex;align-items:center;gap:6px;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Đặt lại
+            </button>
+          </div>
+        </div>
+
+        <!-- Products Table Card -->
+        <div class="card">
+          <div class="card-header" style="margin-bottom: 14px;">
+            <div class="card-title">
+              <span>Bảng danh sách sản phẩm</span>
+              <span id="productTableCount" class="badge badge-gray">10 sản phẩm</span>
+            </div>
+            <div style="font-size:12.5px; color:var(--text-muted);">
+              Tích hợp khu vực tải & xem trước ảnh trực tiếp khi thêm/sửa sản phẩm
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Danh mục</th>
+                  <th>Giá bán</th>
+                  <th>Tồn kho</th>
+                  <th>Trạng thái</th>
+                  <th style="text-align: right;">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination-wrap">
+            <div class="pagination-info" id="productPaginationInfo">Hiển thị 1 - 5 của 10 sản phẩm</div>
+            <div class="pagination-controls" id="productPaginationControls">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL: THÊM / SỬA SẢN PHẨM & UPLOAD / PREVIEW ẢNH -->
+  <div class="modal-backdrop" id="productModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h2 class="modal-title" id="productModalTitle">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+          <span id="productModalModeText">Thêm sản phẩm mới</span>
+        </h2>
+        <button class="btn-close-modal" onclick="closeProductModal()">&times;</button>
+      </div>
+
+      <form id="productForm" onsubmit="handleSaveProduct(event)">
+        <div class="modal-body">
+          <input type="hidden" id="editProductId">
+
+          <!-- THÔNG TIN CƠ BẢN -->
+          <div class="form-grid">
+            <div class="form-group col-span-2">
+              <label class="form-label" for="productName">Tên sản phẩm <span class="required">*</span></label>
+              <input type="text" class="form-control" id="productName" placeholder="VD: Áo thun cotton basic form rộng" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="productSku">Mã SKU / Mã sản phẩm <span class="required">*</span></label>
+              <div style="display:flex; gap:8px;">
+                <input type="text" class="form-control" id="productSku" placeholder="CLT-1029" required>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="generateAutoSku()" title="Tự sinh mã ngẫu nhiên">Tạo tự động</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="productCategory">Danh mục <span class="required">*</span></label>
+              <select class="form-control" id="productCategory" required>
+                <option value="Áo khoác">Áo khoác</option>
+                <option value="Áo sơ mi/Thun">Áo sơ mi/Thun</option>
+                <option value="Quần Jean/Khaki">Quần Jean/Khaki</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="productPrice">Giá bán niêm yết (VNĐ) <span class="required">*</span></label>
+              <input type="number" class="form-control" id="productPrice" placeholder="VD: 29990000" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="productStock">Số lượng trong kho <span class="required">*</span></label>
+              <input type="number" class="form-control" id="productStock" placeholder="VD: 25" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="productStatus">Trạng thái kinh doanh</label>
+              <select class="form-control" id="productStatus">
+                <option value="active">Đang kinh doanh (Active)</option>
+                <option value="out_of_stock">Hết hàng (Out of Stock)</option>
+                <option value="draft">Bản nháp / Tạm ẩn</option>
+              </select>
+            </div>
+
+            <!-- KHU VỰC UPLOAD VÀ PREVIEW ẢNH (YÊU CẦU ĐẶC BIỆT CỦA BẠN) -->
+            <div class="form-group col-span-2" style="margin-top: 8px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <label class="form-label">
+                  Hình ảnh sản phẩm & Preview
+                  <span class="required">*</span>
+                </label>
+                <button type="button" class="upload-preset-btn" onclick="addSampleImages()">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Chọn nhanh ảnh mẫu thời trang có sẵn
+                </button>
+              </div>
+
+              <div class="upload-container">
+                <!-- Dropzone kéo thả -->
+                <div class="upload-dropzone" id="uploadDropzone">
+                  <div class="upload-icon">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                  </div>
+                  <div class="upload-title">Kéo & thả hình ảnh vào đây, hoặc nhấn để chọn file từ máy</div>
+                   <div class="upload-hint">Hỗ trợ PNG, JPG, WEBP tối đa 5MB mỗi ảnh. (Có thể chọn nhiều ảnh cùng lúc)</div>
+                  <input type="file" class="upload-file-input" id="imageFileInput" multiple accept="image/*" onchange="handleFileSelect(event)">
+                </div>
+
+                <!-- Preview Gallery Grid -->
+                <div style="margin-top:4px;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span style="font-size:12.5px; font-weight:600; color:var(--text-muted);" id="previewCountText">Đã tải lên 0 ảnh</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="clearAllImages()" id="clearImagesBtn" style="display:none; font-size:11px; padding:3px 8px;">Xóa tất cả ảnh</button>
+                  </div>
+
+                  <div class="preview-grid" id="imagePreviewGrid">
+                    <!-- Previews injected here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-span-2">
+              <label class="form-label" for="productDesc">Mô tả tóm tắt sản phẩm</label>
+              <textarea class="form-textarea" id="productDesc" placeholder="Mô tả chất liệu, màu sắc, kích thước và cách bảo quản..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeProductModal()">Hủy bỏ</button>
+          <button type="submit" class="btn btn-primary" id="saveProductBtn">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            Lưu sản phẩm
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="../js/admin.js"></script>
+  <script src="../js/products.js"></script>
+  <script>
+    // Mock Product Data
+    let productsData = window.loadShopProducts().map(product => ({
+      ...product,
+      images: [product.image.startsWith('data:') ? product.image : `../${product.image}`],
+      desc: product.description,
+      sold: product.id === 'CLT-102' || product.id === 'CLT-104',
+      status: product.stock === 0 ? 'out_of_stock' : 'active'
+    }));
+
+    let filteredProducts = [...productsData];
+    let currentProductPage = 1;
+    const productsPerPage = 5;
+    let currentUploadedImages = []; // Array of image URLs or base64 data for modal
+
+    function saveProductsForStore() {
+      window.saveShopProducts(productsData.map(product => ({
+        id: product.id,
+        name: product.name,
+        category: product.category,
+        price: product.price,
+        oldPrice: product.oldPrice,
+        stock: product.stock,
+        image: (product.images?.[0] || '../images/product-jacket-black.png').replace(/^\.\.\//, ''),
+        description: product.desc || ''
+      })));
+    }
+
+    // Render Table
+    function renderProductTable() {
+      const tbody = document.getElementById('productTableBody');
+      const countLabel = document.getElementById('productTableCount');
+      const paginationInfo = document.getElementById('productPaginationInfo');
+      const sideLowStock = document.getElementById('sideLowStockCount');
+
+      const lowStockCount = productsData.filter(p => p.stock <= 10 && p.stock > 0).length;
+      if (sideLowStock) sideLowStock.textContent = `${lowStockCount} sắp hết`;
+
+      countLabel.textContent = `${filteredProducts.length} sản phẩm`;
+
+      // Phân trang tối đa 5 sản phẩm mỗi trang
+      const totalPages = Math.ceil(filteredProducts.length / productsPerPage) || 1;
+      if (currentProductPage > totalPages) currentProductPage = totalPages;
+
+      const startIndex = (currentProductPage - 1) * productsPerPage;
+      const paginatedProducts = filteredProducts.slice(startIndex, startIndex + productsPerPage);
+
+      paginationInfo.textContent = filteredProducts.length > 0
+        ? `Hiển thị ${startIndex + 1} - ${Math.min(startIndex + productsPerPage, filteredProducts.length)} của ${filteredProducts.length} sản phẩm`
+        : 'Không có sản phẩm';
+
+      if (paginatedProducts.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-muted);">
+              <svg width="40" height="40" style="margin: 0 auto 10px; display:block; color:var(--text-light);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+              Không tìm thấy sản phẩm nào khớp với bộ lọc tìm kiếm.
+            </td>
+          </tr>
+        `;
+        renderProductPaginationControls(totalPages);
+        return;
+      }
+
+      tbody.innerHTML = paginatedProducts.map(p => {
+        const firstImg = (p.images && p.images.length > 0) 
+          ? p.images[0] 
+          : 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80';
+
+        let stockBadge = '';
+        if (p.stock === 0) {
+          stockBadge = `<span class="badge badge-danger"><span class="badge-dot-indicator"></span>Hết hàng</span>`;
+        } else if (p.stock <= 10) {
+          stockBadge = `<span class="badge badge-warning"><span class="badge-dot-indicator"></span>Còn ${p.stock} (Sắp hết)</span>`;
+        } else {
+          stockBadge = `<span class="badge badge-success"><span class="badge-dot-indicator"></span>Còn ${p.stock} sp</span>`;
+        }
+
+        let statusBadge = '';
+        if (p.status === 'active' && p.stock > 0) {
+          statusBadge = `<span class="badge badge-info">Đang kinh doanh</span>`;
+        } else if (p.status === 'out_of_stock' || p.stock === 0) {
+          statusBadge = `<span class="badge badge-danger">Hết hàng</span>`;
+        } else {
+          statusBadge = `<span class="badge badge-gray">Tạm ngưng</span>`;
+        }
+
+        return `
+          <tr>
+            <td>
+              <div class="product-cell">
+                <img src="${firstImg}" alt="${p.name}" class="product-thumb" onerror="this.src='https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80'">
+                <div>
+                  <div class="cell-info-title">${p.name}</div>
+                  <div class="cell-info-sub">
+                    <span class="code-pill">#${p.id}</span>
+                    <span style="margin-left:6px; font-size:11px; color:var(--text-light);">${p.images ? p.images.length : 0} ảnh</span>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td><span class="badge badge-gray">${p.category}</span></td>
+            <td>
+              <div class="cell-info-title" style="color:var(--text-main); font-weight:700;">${formatVND(p.price)}</div>
+              ${p.oldPrice ? `` : ''}
+            </td>
+            <td>${stockBadge}</td>
+            <td>${statusBadge}</td>
+            <td>
+              <div class="table-actions" style="justify-content: flex-end;">
+                <button class="btn-table-action edit-btn" onclick="openEditProductModal('${p.id}')" title="Sửa thông tin & ảnh">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                </button>
+                <button class="btn-table-action" onclick="deleteProduct('${p.id}')" title="Xóa sản phẩm" style="color:var(--danger);">
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      renderProductPaginationControls(totalPages);
+    }
+
+    function renderProductPaginationControls(totalPages) {
+      const paginationDiv = document.getElementById('productPaginationControls');
+      if (!paginationDiv) return;
+
+      let html = '';
+      if (totalPages > 1) {
+        html += `<button class="page-btn" onclick="changeProductPage(${currentProductPage - 1})" ${currentProductPage === 1 ? 'disabled' : ''}>&laquo;</button>`;
+        for (let i = 1; i <= totalPages; i++) {
+          html += `<button class="page-btn ${i === currentProductPage ? 'active' : ''}" onclick="changeProductPage(${i})">${i}</button>`;
+        }
+        html += `<button class="page-btn" onclick="changeProductPage(${currentProductPage + 1})" ${currentProductPage === totalPages ? 'disabled' : ''}>&raquo;</button>`;
+      } else {
+        html = `<button class="page-btn active">1</button>`;
+      }
+
+      paginationDiv.innerHTML = html;
+    }
+
+    window.changeProductPage = function(page) {
+      currentProductPage = page;
+      renderProductTable();
+    };
+
+    // Delete Product
+    function deleteProduct(productId) {
+      const p = productsData.find(x => x.id === productId);
+      if (!p) return;
+
+        if (p.sold) {
+          showConfirm({
+            title: 'Ẩn sản phẩm đã từng bán',
+            message: `Sản phẩm <strong>${p.name}</strong> đã từng được bán. Theo yêu cầu bài, sản phẩm sẽ được chuyển sang trạng thái <strong>Tạm ẩn</strong> thay vì xóa.`,
+            confirmText: 'Ẩn sản phẩm',
+            confirmClass: 'btn-warning',
+            onConfirm: () => {
+              p.status = 'draft';
+            saveProductsForStore();
+              handleProductFilter();
+              showToast(`Đã ẩn sản phẩm ${p.name}.`, 'warning');
+            }
+          });
+          return;
+        }
+
+        showConfirm({
+        title: 'Xóa sản phẩm',
+        message: `Bạn có chắc chắn muốn xóa sản phẩm <strong>${p.name}</strong> (${p.id})?`,
+        confirmText: 'Xóa sản phẩm',
+        confirmClass: 'btn-danger',
+        onConfirm: () => {
+          productsData = productsData.filter(x => x.id !== productId);
+          saveProductsForStore();
+          handleProductFilter();
+          showToast(`Đã xóa sản phẩm ${p.name}!`, 'danger');
+        }
+      });
+    }
+
+    // Filters & Search
+    function handleProductSearch() {
+      handleProductFilter();
+    }
+
+    function applyProductFilter() {
+      handleProductFilter();
+    }
+
+    function handleProductFilter() {
+      const search = normalizeText(document.getElementById('productSearchInput').value);
+      const category = document.getElementById('categoryFilter').value;
+      const stock = document.getElementById('stockFilter').value;
+
+      filteredProducts = productsData.filter(p => {
+        const matchSearch = !search ||
+          normalizeText(p.name).includes(search) ||
+          normalizeText(p.id).includes(search);
+
+        const matchCategory = category === 'all' || p.category === category;
+
+        let matchStock = true;
+        if (stock === 'in_stock') matchStock = p.stock > 10;
+        else if (stock === 'low_stock') matchStock = p.stock > 0 && p.stock <= 10;
+        else if (stock === 'out_of_stock') matchStock = p.stock === 0;
+
+        return matchSearch && matchCategory && matchStock;
+      });
+
+      currentProductPage = 1;
+      renderProductTable();
+    }
+
+    function resetProductFilters() {
+      document.getElementById('productSearchInput').value = '';
+      document.getElementById('categoryFilter').value = 'all';
+      document.getElementById('stockFilter').value = 'all';
+      filteredProducts = [...productsData];
+      currentProductPage = 1;
+      renderProductTable();
+    }
+
+    // Auto SKU Generator
+    function generateAutoSku() {
+      const randNum = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('productSku').value = `CLT-${randNum}`;
+      showToast(`Đã tạo mã SKU tự động: CLT-${randNum}`, 'info');
+    }
+
+    // ===================================================================
+    // IMAGE UPLOAD & PREVIEW LOGIC
+    // ===================================================================
+    function renderImagePreviews() {
+      const grid = document.getElementById('imagePreviewGrid');
+      const countText = document.getElementById('previewCountText');
+      const clearBtn = document.getElementById('clearImagesBtn');
+
+      countText.textContent = `Đã tải lên ${currentUploadedImages.length} ảnh xem trước`;
+      clearBtn.style.display = currentUploadedImages.length > 0 ? 'inline-block' : 'none';
+
+      if (currentUploadedImages.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 18px; text-align: center; color: var(--text-light); font-size: 13px; border: 1px dashed var(--border-color); border-radius: var(--radius-md);">
+            Chưa có ảnh nào được tải lên cho sản phẩm này.
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = currentUploadedImages.map((src, index) => {
+        const isPrimary = index === 0;
+        return `
+          <div class="preview-card">
+            <img src="${src}" alt="Ảnh preview ${index + 1}">
+            ${isPrimary ? `<span class="preview-badge-primary">★ Ảnh chính</span>` : ''}
+            
+            <button type="button" class="preview-btn-delete" onclick="removeImage(${index})" title="Xóa ảnh này">
+              &times;
+            </button>
+            
+            ${!isPrimary ? `
+              <button type="button" class="preview-btn-set-primary" onclick="setPrimaryImage(${index})">
+                Đặt làm ảnh chính
+              </button>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function handleFileSelect(e) {
+      const files = Array.from(e.target.files);
+      if (!files.length) return;
+
+      files.forEach(file => {
+        if (!file.type.startsWith('image/')) {
+          showToast(`File "${file.name}" không phải định dạng ảnh hợp lệ!`, 'danger');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          currentUploadedImages.push(event.target.result);
+          renderImagePreviews();
+          showToast(`Đã tải lên và tạo preview cho: ${file.name}`, 'success');
+        };
+        reader.readAsDataURL(file);
+      });
+
+      e.target.value = ''; // Reset input so same file can be re-selected if needed
+    }
+
+    // Drag and Drop Zone listeners
+    const dropzone = document.getElementById('uploadDropzone');
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.add('dragover');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropzone.classList.remove('dragover');
+      }, false);
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files && files.length > 0) {
+        handleFileSelect({ target: { files: files } });
+      }
+    });
+
+    function setPrimaryImage(index) {
+      if (index > 0 && index < currentUploadedImages.length) {
+        const item = currentUploadedImages.splice(index, 1)[0];
+        currentUploadedImages.unshift(item);
+        renderImagePreviews();
+        showToast('Đã đặt làm ảnh chính của sản phẩm!', 'success');
+      }
+    }
+
+    function removeImage(index) {
+      currentUploadedImages.splice(index, 1);
+      renderImagePreviews();
+      showToast('Đã xóa ảnh khỏi danh sách xem trước!', 'warning');
+    }
+
+    function clearAllImages() {
+      currentUploadedImages = [];
+      renderImagePreviews();
+      showToast('Đã xóa toàn bộ ảnh xem trước.', 'info');
+    }
+
+    function addSampleImages() {
+      const sampleClothingImages = [
+        'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80'
+      ];
+      sampleClothingImages.forEach(img => {
+        if (!currentUploadedImages.includes(img)) {
+          currentUploadedImages.push(img);
+        }
+      });
+      renderImagePreviews();
+      showToast('Đã nạp 3 ảnh mẫu quần áo vào khu vực Preview!', 'success');
+    }
+
+    // ===================================================================
+    // PRODUCT MODAL HANDLERS
+    // ===================================================================
+    function openCreateProductModal() {
+      document.getElementById('productForm').reset();
+      document.getElementById('editProductId').value = '';
+      document.getElementById('productModalModeText').textContent = 'Thêm sản phẩm mới';
+      generateAutoSku();
+      currentUploadedImages = [];
+      renderImagePreviews();
+      document.getElementById('productModal').classList.add('open');
+    }
+
+    function openEditProductModal(productId) {
+      const p = productsData.find(x => x.id === productId);
+      if (!p) return;
+
+      document.getElementById('editProductId').value = p.id;
+      document.getElementById('productModalModeText').textContent = `Chỉnh sửa: ${p.name} (#${p.id})`;
+      document.getElementById('productName').value = p.name;
+      document.getElementById('productSku').value = p.id;
+      document.getElementById('productCategory').value = p.category;
+      document.getElementById('productPrice').value = p.price;
+      const oldPriceEl = document.getElementById('productOldPrice');
+      if (oldPriceEl) oldPriceEl.value = p.oldPrice || '';
+      document.getElementById('productStock').value = p.stock;
+      document.getElementById('productStatus').value = p.status;
+      document.getElementById('productDesc').value = p.desc || '';
+
+      // Load existing images into upload/preview gallery
+      currentUploadedImages = p.images ? [...p.images] : [];
+      renderImagePreviews();
+
+      document.getElementById('productModal').classList.add('open');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('open');
+    }
+
+    function handleSaveProduct(e) {
+      e.preventDefault();
+      const editId = document.getElementById('editProductId').value;
+      const name = document.getElementById('productName').value.trim();
+      const sku = document.getElementById('productSku').value.trim();
+      const category = document.getElementById('productCategory').value;
+      const price = parseFloat(document.getElementById('productPrice').value) || 0;
+      const oldPriceEl = document.getElementById('productOldPrice');
+      const oldPrice = oldPriceEl ? (parseFloat(oldPriceEl.value) || 0) : 0;
+      const stock = parseInt(document.getElementById('productStock').value, 10) || 0;
+      const status = document.getElementById('productStatus').value;
+      const desc = document.getElementById('productDesc').value.trim();
+
+      if (currentUploadedImages.length === 0) {
+        showToast('Vui lòng thêm ít nhất 1 hình ảnh hoặc dùng nút "Chọn nhanh ảnh mẫu"!', 'warning');
+        return;
+      }
+
+      if (editId) {
+        // Edit Mode
+        const p = productsData.find(x => x.id === editId);
+        if (p) {
+          p.name = name;
+          p.category = category;
+          p.price = price;
+          p.oldPrice = oldPrice;
+          p.stock = stock;
+          p.status = stock === 0 ? 'out_of_stock' : status;
+          p.desc = desc;
+          p.images = [...currentUploadedImages];
+          saveProductsForStore();
+          showToast(`Đã lưu thay đổi cho sản phẩm #${editId}!`, 'success');
+        }
+      } else {
+        // Create Mode
+        const newProduct = {
+          id: sku || ('CLT-' + (100 + productsData.length + 1)),
+          name,
+          category,
+          price,
+          oldPrice,
+          stock,
+          status: stock === 0 ? 'out_of_stock' : status,
+          desc,
+          images: [...currentUploadedImages]
+        };
+        productsData.unshift(newProduct);
+        saveProductsForStore();
+        showToast(`Đã thêm thành công sản phẩm "${name}"!`, 'success');
+      }
+
+      closeProductModal();
+      handleProductFilter();
+    }
+
+    function exportProductCSV() {
+      showToast('Đang tạo và tải file CSV danh sách sản phẩm...', 'info');
+    }
+
+    
+
+    // Initial render
+    renderProductTable();
+  </script>
+</body>
+</html>
