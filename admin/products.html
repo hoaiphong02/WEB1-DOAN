@@ -338,13 +338,19 @@
   <script src="../js/products.js"></script>
   <script>
     // Mock Product Data
-    let productsData = window.loadShopProducts().map(product => ({
-      ...product,
-      images: [product.image.startsWith('data:') ? product.image : `../${product.image}`],
-      desc: product.description,
-      sold: product.id === 'CLT-102' || product.id === 'CLT-104',
-      status: product.stock === 0 ? 'out_of_stock' : 'active'
-    }));
+    let productsData = window.loadShopProducts().map(product => {
+      let imgPath = product.image || '';
+      if (!imgPath.startsWith('data:') && !imgPath.startsWith('http')) {
+        imgPath = imgPath.startsWith('../') ? imgPath : `../${imgPath}`;
+      }
+      return {
+        ...product,
+        images: [imgPath],
+        desc: product.description,
+        sold: product.id === 'CLT-102' || product.id === 'CLT-104',
+        status: product.stock === 0 ? 'out_of_stock' : 'active'
+      };
+    });
 
     let filteredProducts = [...productsData];
     let currentProductPage = 1;
