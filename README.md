@@ -28,12 +28,12 @@ WEB1-DOAN/
 │   ├── product-jacket-brown.png     # Ảnh sản phẩm: Áo bomber da bò nâu
 │   ├── product-jacket-grey.png      # Ảnh sản phẩm: Áo khoác nỉ xám khói
 │   ├── product-jacket-windbreaker.png # Ảnh sản phẩm: Áo khoác gió 2 lớp
-│   ├── product-shirt-oxford.png     # Ảnh sản phẩm: Áo sơ mi Oxford
-│   ├── product-shirt-tshirt.png     # Ảnh sản phẩm: Áo thun Cotton basic
-│   ├── product-shirt-polo.png       # Ảnh sản phẩm: Áo Polo nam phối cổ
+│   ├── product-pant-baggy.png       # Ảnh sản phẩm: Quần tây Baggy công sở
 │   ├── product-pant-jean.png        # Ảnh sản phẩm: Quần Jean Slimfit co giãn
 │   ├── product-pant-khaki.png       # Ảnh sản phẩm: Quần Khaki túi hộp
-│   └── product-pant-baggy.png       # Ảnh sản phẩm: Quần tây Baggy công sở
+│   ├── product-shirt-oxford.png     # Ảnh sản phẩm: Áo sơ mi Oxford
+│   ├── product-shirt-polo.png       # Ảnh sản phẩm: Áo Polo nam phối cổ
+│   └── product-shirt-tshirt.png     # Ảnh sản phẩm: Áo thun Cotton basic
 │
 ├── index.html                       # Trang chủ dành cho khách (chưa đăng nhập)
 ├── logged-index.html                # Trang chủ sau khi khách hàng đã đăng nhập thành công
