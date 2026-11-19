@@ -93,9 +93,3 @@ WEB1-DOAN/
 - **Quản lý người dùng (`admin/users.html`):**
   - Danh sách tài khoản khách hàng, khóa/mở khóa tài khoản, phân quyền.
 
----
-
-## 🛠️ CÔNG NGHỆ SỬ DỤNG
-- **HTML5:** Cấu trúc ngữ nghĩa chuẩn W3C, hỗ trợ SEO cơ bản.
-- **CSS3:** Thiết kế theo phong cách Modern Dark Theme (Tailwind Slate / Navy Palette), giao diện kính mờ (Glassmorphism), Responsive hoàn chỉnh trên cả Desktop, Tablet và Mobile.
-- **Vanilla JavaScript:** Xử lý sự kiện DOM, render dữ liệu động, lưu trữ state bằng `localStorage`.
